@@ -8,6 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -16,7 +19,8 @@
                     colors: {
                         primary: '#efcf4f',
                         secondary: '#c25934',
-                        tertiary: '#0c4b65'
+                        tertiary: '#0c4b65',
+                        tertiaryDark: '#0a3f55',
                     }
                 }
             },
@@ -30,23 +34,27 @@
 </head>
 
 <body>
-    <footer>
-        <div id="sub-bar" class="sm:mx-40 md:mx-72 relative top-10">
-            <div class="flex flex-col md:flex-row justify-around bg-amber-300">
+    <footer class="font-sans">
+        <div id="sub-bar" class="sm:mx-40 md:mx-72 relative top-20">
+            <div class="flex flex-col md:flex-row justify-around bg-primary rounded-[10px] py-10 md:px-10 md:py-5">
                 <div class="text-center md:text-left">
-                    <p>Wanna stay in touch</p>
-                    <h4>Subscribe</h4>
+                    <p class="text-white text-lg font-bold">Wanna stay in touch</p>
+                    <h4 class="text-tertiary text-4xl font-bold">Subscribe</h4>
                 </div>
-                <input type="email" name="email" id="">
-                <button>Subscribe</button>
+                <input
+                    class="rounded-[10px] font-4xl text-tertiary w-4/5 self-center p-5 my-4 mx-8 md:relative md:left-10 z-0"
+                    type="email" name="email" placeholder="Your email address">
+                <button
+                    class="bg-secondary text-white uppercase text-xl font-bold w-fit self-center px-16 py-4 rounded-[10px] z-1">Subscribe</button>
             </div>
         </div>
-        <div id="main-footer" class="flex flex-col md:flex-row justify-evenly bg-slate-100 pt-20 px-4 md:px-0">
+        <div id="main-footer"
+            class="flex flex-col md:flex-row justify-evenly gap-y-16 bg-tertiary text-white pt-32 pb-10 px-4 md:px-0">
             <div>Nota Corda</div>
             <div>Contact Us</div>
             <div>Insta</div>
         </div>
-        <div id="copyright-bar" class="flex flex-row justify-around bg-slate-300">
+        <div id="copyright-bar" class="flex flex-row justify-around bg-tertiaryDark text-white py-8">
             ©Infotekkers
             <div>👆🏾</div>
         </div>
