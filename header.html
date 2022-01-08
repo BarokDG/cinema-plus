@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Header</title>
+</head>
+
+<body>
+    <nav class="flex flex-row justify-evenly">
+        <div id="nav-logo">
+            <a>Cinema</a>
+            <h4>Enjoy Life</h4>
+        </div>
+        <div id="nav-items"
+            class="invisible h-0 w-0 md:visible md:h-fit md:w-fit flex flex-col md:flex-row md:space-x-8">
+            <a>Menu</a>
+            <a>Menu</a>
+            <a>Menu</a>
+            <a>Menu</a>
+            <a>Menu</a>
+            <a>Menu</a>
+            <a>Menu</a>
+        </div>
+        <div class="md:hidden">
+            <button id="ham">
+                <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+    <div id="nav-items-mobile" class="hidden flex flex-col space-y-2 w-screen h-screen fixed top-0 bg-white">
+        <div id="close" class="self-end mx-8 my-4">X</div>
+        <a>Menu</a>
+        <a>Menu</a>
+        <a>Menu</a>
+        <a>Menu</a>
+        <a>Menu</a>
+        <a>Menu</a>
+        <a>Menu</a>
+    </div>
+
+
+    <script>
+        const ham = document.querySelector("#ham");
+        const close = document.querySelector("#close");
+        const navItems = document.querySelector("#nav-items-mobile");
+
+
+        ham.addEventListener("click", toggleMenu);
+        ham.addEventListener("touch", toggleMenu);
+        close.addEventListener("click", toggleMenu);
+        close.addEventListener("touch", toggleMenu);
+
+        function toggleMenu() {
+            if (navItems.classList.contains("hidden")) {
+                navItems.classList.remove("hidden");
+            } else {
+                navItems.classList.add("hidden");
+            }
+
+        }
+    </script>
+</body>
+
+</html>
