@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+    <title>Footer</title>
+</head>
+
+<body>
+    <footer>
+        <div id="sub-bar" class="sm:mx-40 md:mx-72 relative top-10">
+            <div class="flex flex-col md:flex-row justify-around bg-amber-300">
+                <div class="text-center md:text-left">
+                    <p>Wanna stay in touch</p>
+                    <h4>Subscribe</h4>
+                </div>
+                <input type="email" name="email" id="">
+                <button>Subscribe</button>
+            </div>
+        </div>
+        <div id="main-footer" class="flex flex-col md:flex-row justify-evenly bg-slate-100 pt-20 px-4 md:px-0">
+            <div>Nota Corda</div>
+            <div>Contact Us</div>
+            <div>Insta</div>
+        </div>
+        <div id="copyright-bar" class="flex flex-row justify-around bg-slate-300">
+            ©Infotekkers
+            <div>👆🏾</div>
+        </div>
+    </footer>
+</body>
+
+</html>
