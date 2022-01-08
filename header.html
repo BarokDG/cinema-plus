@@ -5,13 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spicy+Rice&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        clifford: '#da373d',
+                        primary: '#efcf4f',
+                        secondary: '#c25934',
+                        tertiary: '#0c4b65'
+                    },
+                    fontFamily: {
+                        spicy: ['Spicy Rice'],
+                        sans: ['Open Sans']
                     }
                 }
             }
@@ -20,32 +32,33 @@
     <title>Header</title>
 </head>
 
-<body>
-    <nav class="flex flex-row justify-evenly">
-        <div id="nav-logo">
-            <a>Cinema</a>
-            <h4>Enjoy Life</h4>
+<body class="bg-slate-500">
+    <nav class="flex flex-row justify-around md:justify-evenly items-center my-5 text-white">
+        <div id="nav-logo" class="hover:cursor-pointer">
+            <a class="font-spicy text-4xl">Cinema</a>
+            <h4 class="font-sans lowercase">Enjoy Life</h4>
         </div>
         <div id="nav-items"
-            class="invisible h-0 w-0 md:visible md:h-fit md:w-fit flex flex-col md:flex-row md:space-x-8">
-            <a>Menu</a>
-            <a>Menu</a>
-            <a>Menu</a>
-            <a>Menu</a>
-            <a>Menu</a>
-            <a>Menu</a>
-            <a>Menu</a>
+            class="invisible h-0 w-0 md:visible md:h-fit md:w-fit flex flex-col md:flex-row md:space-x-8 uppercase font-sans text-md">
+            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
+            <a class=" hover:text-primary hover:cursor-pointer">Menu</a>
         </div>
         <div class="md:hidden">
             <button id="ham">
-                <svg class="w-6 h-6 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
-                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <svg class="w-10 h-10 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="white">
                     <path d="M4 6h16M4 12h16M4 18h16"></path>
                 </svg>
             </button>
         </div>
     </nav>
-    <div id="nav-items-mobile" class="hidden flex flex-col space-y-2 w-screen h-screen fixed top-0 bg-white">
+    <div id="nav-items-mobile"
+        class="hidden flex flex-col space-y-8 w-screen h-screen fixed top-0 bg-white font-sans text-3xl px-10 bg-primary text-tertiary">
         <div id="close" class="self-end mx-8 my-4">X</div>
         <a>Menu</a>
         <a>Menu</a>
