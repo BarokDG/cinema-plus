@@ -10,7 +10,7 @@
 </head>
 
 
-<body class="test-class" id="rjs_body" >
+<body id="rjs_body" >
 <header>
 	Header
 </header>

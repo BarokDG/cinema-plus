@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-body.test-class {
-  @apply bg-blue-900;
+#post-content > p {
+  @apply my-3 text-gray-500;
+}
+
+#post-content h3 {
+  @apply mt-6 font-bold text-lg;
+}
+
+#post-content-list li {
+  @apply leading-6 text-gray-500;
+}
+
+#tags button {
+  @apply px-5 py-1 border-solid border-amber-300 border-2 rounded-3xl font-bold text-[12px] hover:bg-orange-400 hover:text-white;
+}
+
+#socials span {
+  @apply w-6 h-6 bg-black inline-block mr-1 last:mr-0;
 }
