@@ -27,6 +27,32 @@ class CinemaPlusCustomizer{
         $this -> landing_page_customizer($wp_customize);
     }
 
+
+/*
+    ========================================
+   Function to define new Section
+    ========================================
+*/
+    private function add_new_section($wp_customize_instance,$section_name,$section_title,$section_description="",$section_priority=1){
+        $wp_customize_instance -> add_section($section_name,array(
+            'title' => __($section_title),
+            'description' => __($section_description),
+            'priority' => $section_priority,
+        ));
+    }
+/*
+    ========================================
+   Function to define new Setting
+    ========================================
+*/
+     private function add_new_setting($wp_customize_instance,$setting_name,$default_value,$sanitize_callback){
+         $wp_customize_instance -> add_setting($setting_name,array(
+            'default' => $default_value,
+             'sanitize_callback' => $sanitize_callback,
+        ));
+    }
+
+
 /*
     ========================================
     Global Customizer Function : All Settings and Controls for Global Values
