@@ -730,8 +730,12 @@ body {
 }
 
 #landing-page-container {
+  display: flex;
   height: 100vh;
   width: 100vw;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
@@ -749,11 +753,11 @@ body {
 #landing-page-container {
 
   /* Replace */
-  height: 120vh;
+  /* height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   animation: animateLandingBackground 32s ease-in-out infinite;
   -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
 }
@@ -1051,6 +1055,107 @@ body {
   }
 }
 
+/*
+  ========================================
+  Movie Cards Styles
+  ========================================
+*/
+
+#movie-cards-container {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  /* p-3 lg:px-12 sm:justify-between */
+}
+
+#movie-cards-container > main {
+  margin: 0px;
+  margin-top: 2.5rem;
+  margin-right: 0.75rem;
+  margin-left: 1.25rem;
+  height: 24rem;
+  width: 41.666667%;
+  padding: 0px;
+  text-align: center;
+}
+
+@media (min-width: 1024px) {
+
+  #movie-cards-container > main {
+    width: 25%;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  #movie-cards-container > main {
+    width: 16.666667%;
+  }
+}
+
+#movie-cards-container > main {
+  overflow: hidden;
+}
+#movie-cards-container > main > div {
+  position: relative;
+  margin-top: 0px;
+  margin-bottom: 0.75rem;
+  height: 18rem;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+
+#movie-card-overlay {
+  position: absolute;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom left;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 0.5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(251 146 60 / var(--tw-bg-opacity));
+  opacity: 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+/* Animation Style */
+#movie-card-image:hover #movie-card-overlay {
+  opacity: 1;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  /* opacity: 1; */
+}
+
+#movie-cards-container > main:nth-of-type(1) > div {
+  background-image: url("../img/movies/movie-one.jpg");
+}
+
+#movie-cards-container > main:nth-of-type(2) > div {
+  background-image: url("../img/movies/movie-two.jpg");
+}
+#movie-cards-container > main:nth-of-type(3) > div {
+  background-image: url("../img/movies/movie-three.jpg");
+}
+#movie-cards-container > main:nth-of-type(4) > div {
+  background-image: url("../img/movies/movie-four.jpg");
+}
 /*
   ========================================
   Blog Page Styles

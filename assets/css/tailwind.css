@@ -89,14 +89,14 @@ body {
 }
 
 #landing-page-container {
-  @apply w-screen h-screen bg-cover bg-no-repeat bg-center bg-fixed pt-0 xl:pt-8;
+  @apply w-screen h-screen bg-cover bg-no-repeat bg-center bg-fixed pt-0 xl:pt-8 flex flex-col justify-center items-center;
 
   /* Replace */
-  height: 120vh;
+  /* height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   animation: animateLandingBackground 32s ease-in-out infinite;
   -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
 }
@@ -157,6 +157,62 @@ body {
   @apply text-white sm:text-[16px] lg:text-[18px] rounded-md font-bold mt-16 lg:mt-20 xl:mt-24 uppercase py-4 px-8 lg:py-4 lg:px-9 hover:bg-white hover:text-black;
 }
 
+/*
+  ========================================
+  Movie Cards Styles
+  ========================================
+*/
+
+#movie-cards-container {
+  @apply w-screen  flex flex-wrap p-6;
+  /* p-3 lg:px-12 sm:justify-between */
+}
+
+#movie-cards-container > main {
+  @apply w-5/12 lg:w-3/12 xl:w-2/12 h-96  mt-10 mr-3 ml-5 text-center p-0 m-0;
+  overflow: hidden;
+}
+#movie-cards-container > main > div {
+  @apply h-72 mt-0 text-center mb-3 bg-cover bg-no-repeat bg-center relative rounded-lg;
+}
+
+#movie-card-overlay {
+  @apply absolute bg-orange-400 opacity-0 origin-bottom-left flex flex-col justify-center w-full h-full rounded-lg;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+/* Animation Style */
+#movie-card-image:hover #movie-card-overlay {
+  @apply opacity-100;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  /* opacity: 1; */
+}
+
+#movie-cards-container > main:nth-of-type(1) > div {
+  background-image: url("../img/movies/movie-one.jpg");
+}
+
+#movie-cards-container > main:nth-of-type(2) > div {
+  background-image: url("../img/movies/movie-two.jpg");
+}
+#movie-cards-container > main:nth-of-type(3) > div {
+  background-image: url("../img/movies/movie-three.jpg");
+}
+#movie-cards-container > main:nth-of-type(4) > div {
+  background-image: url("../img/movies/movie-four.jpg");
+}
 /*
   ========================================
   Blog Page Styles
