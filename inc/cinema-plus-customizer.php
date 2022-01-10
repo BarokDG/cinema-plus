@@ -1,0 +1,49 @@
+<?php
+
+// Get Sanitizer Class and Initiate it
+require get_stylesheet_directory(  ) . "/inc/cinema-plus-sanitizer.php";
+$cinema_plus_sanitizer = new CinemaPlusSanitizer();
+
+
+// Define the Customizer class
+class CinemaPlusCustomizer{
+
+/*
+    ========================================
+    Constructor Function : Hooks the customizer function
+    ========================================
+*/
+    public function __construct(){
+        add_action("customize_register",array($this,'register_customizer_sections'));
+    }
+    
+/*
+    ========================================
+    Customizer Function: Initialize all customizer function
+    ========================================
+*/
+    public function register_customizer_sections($wp_customize){
+        $this -> global_values_customizer($wp_customize);
+        $this -> landing_page_customizer($wp_customize);
+    }
+
+/*
+    ========================================
+    Global Customizer Function : All Settings and Controls for Global Values
+    ========================================
+*/
+    private function global_values_customizer($wp_customize){
+        // Define All Controls and Settings pair for global values
+    }
+
+/*
+    ========================================
+    Landing Page Customizer Function : All Settings and Controls for Landing Page
+    ========================================
+*/ 
+    private function landing_page_customizer($wp_customize){
+        // Define All Controls and Settings pair for Landing Page values
+    }
+}
+
+?>
