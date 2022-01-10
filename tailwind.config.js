@@ -1,7 +1,12 @@
 module.exports = {
-  content: ["**/*.php", "*.php"],
+  content: ["**/*.php", "*.php", "**/*.html", "*.html"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        spice: "Spicy Rice",
+        sans: "Open Sans",
+      },
+    },
   },
   plugins: [],
 };
