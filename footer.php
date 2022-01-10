@@ -1,13 +1,12 @@
 <?php if (!defined('ABSPATH')) { exit; }?>
 
-</div><!-- Closing of rjs-page -->
 
-
+<!-- Footer Design Section -->
 <footer>
-	Footer
+    Footer
 </footer>
-
 
 <?php wp_footer(); ?>
 </body>
+
 </html>

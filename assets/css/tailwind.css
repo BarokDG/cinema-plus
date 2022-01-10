@@ -17,7 +17,7 @@ body {
   ========================================
 */
 #header-container {
-  @apply w-screen h-20 absolute top-0 left-0 z-50 text-white text-center;
+  @apply w-screen h-20 absolute left-0 z-50 text-white text-center;
 }
 
 @keyframes animateLandingBackground {
@@ -90,13 +90,7 @@ body {
 
 #landing-page-container {
   @apply w-screen h-screen bg-cover bg-no-repeat bg-center bg-fixed pt-0 xl:pt-8 flex flex-col justify-center items-center;
-
-  /* Replace */
-  /* height: 120vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  height: 120vh;
   animation: animateLandingBackground 32s ease-in-out infinite;
   -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
 }
@@ -348,4 +342,12 @@ body {
     /* Safari, Android, iOS */
       url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.svg#SpicyRice")
       format("svg"); /* Legacy iOS */
+}
+
+#menu-primary-menu {
+  background-color: red !important;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 75%;
+  margin-right: 3%;
 }
