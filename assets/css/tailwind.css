@@ -90,7 +90,7 @@ body {
 
 #landing-page-container {
   @apply w-screen h-screen bg-cover bg-no-repeat bg-center bg-fixed pt-0 xl:pt-8 flex flex-col justify-center items-center;
-  height: 120vh;
+  height: 130vh;
   animation: animateLandingBackground 32s ease-in-out infinite;
   -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
 }
