@@ -3,15 +3,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#efcf4f',
-        secondary: '#c25934',
-        tertiary: '#0c4b65',
-        tertiaryDark: '#0a3f55',
+        primary: "#efcf4f",
+        secondary: "#c25934",
+        tertiary: "#0c4b65",
+        tertiaryDark: "#0a3f55",
       },
       fontFamily: {
-          spicy: ['Spicy Rice'],
-          sans: ['Open Sans']
-      }
+        spicy: ["Spicy Rice"],
+        opensans: ["Open Sans"],
+      },
     },
   },
   plugins: [],

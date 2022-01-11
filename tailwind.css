@@ -1,17 +1,14 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
-
-@layer base {
-  @font-face {
-    font-family: "Spicy Rice";
-    src: url("assets/fonts/SpicyRice.ttf") format("truetype");
-  }
-  @font-face {
-    font-family: "Open Sans";
-    src: url("assets/fonts/OpenSans.ttf") format("truetype");
-  }
+@font-face {
+  font-family: "Spicy Rice";
+  src: url("assets/fonts/SpicyRice.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Open Sans";
+  src: url("assets/fonts/OpenSans.ttf") format("truetype");
+}
+@tailwind utilities;
 
 #post-content > p {
   @apply my-3 text-gray-500;
