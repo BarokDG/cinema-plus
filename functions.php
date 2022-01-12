@@ -7,6 +7,9 @@
 */
 function cp_register_basic_supports(){
     add_theme_support('title-tag');
+    
+    // Support for Post Thumbnails/Featured Image : size of image will be decided at render time
+    add_theme_support( 'post-thumbnails' );
     // cp_custom_logo_setup();
 }
 
