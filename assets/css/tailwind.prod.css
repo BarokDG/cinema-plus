@@ -1,6 +1,6 @@
 /*
 ! tailwindcss v3.0.12 | MIT License | https://tailwindcss.com
-*/ /*
+*//*
 1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
@@ -16,7 +16,7 @@
 
 ::before,
 ::after {
-  --tw-content: "";
+  --tw-content: '';
 }
 
 /*
@@ -31,7 +31,7 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   -o-tab-size: 4;
-  tab-size: 4; /* 3 */
+     tab-size: 4; /* 3 */
   font-family: Open Sans; /* 4 */
 }
 
@@ -63,7 +63,7 @@ Add the correct text decoration in Chrome, Edge, and Safari.
 
 abbr:where([title]) {
   -webkit-text-decoration: underline dotted;
-  text-decoration: underline dotted;
+          text-decoration: underline dotted;
 }
 
 /*
@@ -107,8 +107,7 @@ code,
 kbd,
 samp,
 pre {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    "Liberation Mono", "Courier New", monospace; /* 1 */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -186,9 +185,9 @@ select {
 */
 
 button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+[type='button'],
+[type='reset'],
+[type='submit'] {
   -webkit-appearance: button; /* 1 */
   background-color: transparent; /* 2 */
   background-image: none; /* 2 */
@@ -232,7 +231,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
-[type="search"] {
+[type='search'] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -292,7 +291,7 @@ legend {
   padding: 0;
 }
 
-/* ol, */
+ol,
 ul,
 menu {
   list-style: none;
@@ -313,14 +312,12 @@ textarea {
 2. Set the default placeholder color to the user's configured gray 400 color.
 */
 
-input::-moz-placeholder,
-textarea::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
 
-input:-ms-input-placeholder,
-textarea:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   opacity: 1; /* 1 */
   color: #9ca3af; /* 2 */
 }
@@ -383,9 +380,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
-*,
-::before,
-::after {
+*, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-rotate: 0;
@@ -393,16 +388,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-skew-y: 0;
   --tw-scale-x: 1;
   --tw-scale-y: 1;
-  --tw-pan-x: ;
-  --tw-pan-y: ;
-  --tw-pinch-zoom: ;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
   --tw-scroll-snap-strictness: proximity;
-  --tw-ordinal: ;
-  --tw-slashed-zero: ;
-  --tw-numeric-figure: ;
-  --tw-numeric-spacing: ;
-  --tw-numeric-fraction: ;
-  --tw-ring-inset: ;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
   --tw-ring-offset-width: 0px;
   --tw-ring-offset-color: #fff;
   --tw-ring-color: rgb(59 130 246 / 0.5);
@@ -410,27 +405,59 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
-  --tw-blur: ;
-  --tw-brightness: ;
-  --tw-contrast: ;
-  --tw-grayscale: ;
-  --tw-hue-rotate: ;
-  --tw-invert: ;
-  --tw-saturate: ;
-  --tw-sepia: ;
-  --tw-drop-shadow: ;
-  --tw-backdrop-blur: ;
-  --tw-backdrop-brightness: ;
-  --tw-backdrop-contrast: ;
-  --tw-backdrop-grayscale: ;
-  --tw-backdrop-hue-rotate: ;
-  --tw-backdrop-invert: ;
-  --tw-backdrop-opacity: ;
-  --tw-backdrop-saturate: ;
-  --tw-backdrop-sepia: ;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+.invisible {
+  visibility: hidden;
+}
+.fixed {
+  position: fixed;
+}
+.relative {
+  position: relative;
+}
+.top-20 {
+  top: 5rem;
+}
+.top-0 {
+  top: 0px;
+}
+.z-0 {
+  z-index: 0;
+}
+.z-10 {
+  z-index: 10;
 }
 .m-10 {
   margin: 2.5rem;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 .mb-2 {
   margin-bottom: 0.5rem;
@@ -447,6 +474,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex {
   display: flex;
 }
+.hidden {
+  display: none;
+}
+.h-0 {
+  height: 0px;
+}
+.h-6 {
+  height: 1.5rem;
+}
+.h-10 {
+  height: 2.5rem;
+}
+.h-screen {
+  height: 100vh;
+}
 .h-fit {
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -454,6 +496,26 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-96 {
   height: 24rem;
+}
+.w-4\/5 {
+  width: 80%;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.w-0 {
+  width: 0px;
+}
+.w-6 {
+  width: 1.5rem;
+}
+.w-10 {
+  width: 2.5rem;
+}
+.w-screen {
+  width: 100vw;
 }
 .w-full {
   width: 100%;
@@ -470,6 +532,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-grow {
   flex-grow: 1;
 }
+.flex-row {
+  flex-direction: row;
+}
 .flex-col {
   flex-direction: column;
 }
@@ -482,10 +547,41 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-between {
   justify-content: space-between;
 }
+.justify-around {
+  justify-content: space-around;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+.gap-y-16 {
+  row-gap: 4rem;
+}
+.space-y-8 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(2rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(2rem * var(--tw-space-y-reverse));
+}
 .space-x-1 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(0.25rem * var(--tw-space-x-reverse));
   margin-left: calc(0.25rem * calc(1 - var(--tw-space-x-reverse)));
+}
+.self-end {
+  align-self: flex-end;
+}
+.self-center {
+  align-self: center;
+}
+.rounded-\[10px\] {
+  border-radius: 10px;
+}
+.bg-slate-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 .bg-red-400 {
   --tw-bg-opacity: 1;
@@ -527,6 +623,33 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
+.p-5 {
+  padding: 1.25rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+.px-16 {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
 .px-48 {
   padding-left: 12rem;
   padding-right: 12rem;
@@ -543,6 +666,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
+.pt-32 {
+  padding-top: 8rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
 .pt-4 {
   padding-top: 1rem;
 }
@@ -552,14 +681,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pl-8 {
   padding-left: 2rem;
 }
-.pb-10 {
-  padding-bottom: 2.5rem;
-}
 .pb-8 {
   padding-bottom: 2rem;
 }
+.text-center {
+  text-align: center;
+}
 .text-justify {
   text-align: justify;
+}
+.font-sans {
+  font-family: Open Sans;
 }
 .text-lg {
   font-size: 1.125rem;
@@ -569,6 +701,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -576,9 +716,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-bold {
   font-weight: 700;
 }
+.font-extrabold {
+  font-weight: 800;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+.lowercase {
+  text-transform: lowercase;
+}
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-gray-500 {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 .text-sky-400 {
   --tw-text-opacity: 1;
@@ -771,6 +924,7 @@ body {
 }
 
 @media (min-width: 1280px) {
+
   #landing-page-container {
     padding-top: 2rem;
   }
@@ -785,12 +939,14 @@ body {
 }
 
 @media (min-width: 1280px) {
+
   #landing-page-container > h1 {
     font-size: 48px;
   }
 }
 
 #landing-page-container > h2 {
+
   /* Replace */
   letter-spacing: 1px;
   margin-top: -1.5rem;
@@ -802,6 +958,7 @@ body {
 }
 
 @media (min-width: 1280px) {
+
   #landing-page-container > h2 {
     margin-top: -2.5rem;
   }
@@ -820,6 +977,7 @@ body {
 }
 
 @media (min-width: 640px) {
+
   #landing-page-container > span {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -827,6 +985,7 @@ body {
 }
 
 @media (min-width: 1024px) {
+
   #landing-page-container > span {
     padding-left: 10rem;
     padding-right: 10rem;
@@ -838,6 +997,7 @@ body {
 }
 
 @media (min-width: 1280px) {
+
   #landing-page-container > span {
     padding-left: 20rem;
     padding-right: 20rem;
@@ -867,12 +1027,14 @@ body {
 }
 
 @media (min-width: 640px) {
+
   #landing-page-container > a {
     font-size: 16px;
   }
 }
 
 @media (min-width: 1024px) {
+
   #landing-page-container > a {
     margin-top: 5rem;
   }
@@ -898,6 +1060,7 @@ body {
 }
 
 @media (min-width: 1280px) {
+
   #landing-page-container > a {
     margin-top: 6rem;
   }
@@ -931,6 +1094,7 @@ body {
   text-align: center;
 }
 @media (min-width: 1024px) {
+
   #promo-container {
     width: 75%;
   }
@@ -942,6 +1106,7 @@ body {
   color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 @media (min-width: 1280px) {
+
   #promo-container > h1 {
     font-size: 24px;
   }
@@ -954,11 +1119,13 @@ body {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 @media (min-width: 1024px) {
+
   #promo-container > h2 {
     margin-top: -0.5rem;
   }
 }
 @media (min-width: 1280px) {
+
   #promo-container > h2 {
     font-size: 72px;
   }
@@ -972,6 +1139,7 @@ body {
   color: rgb(15 118 110 / var(--tw-text-opacity));
 }
 @media (min-width: 1280px) {
+
   #promo-container > h3 {
     padding-left: 12rem;
     padding-right: 12rem;
@@ -1018,11 +1186,13 @@ body {
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
 @media (min-width: 640px) {
+
   #promo-container > div > a {
     font-size: 16px;
   }
 }
 @media (min-width: 1024px) {
+
   #promo-container > div > a {
     margin-top: 5rem;
   }
@@ -1042,6 +1212,7 @@ body {
   }
 }
 @media (min-width: 1280px) {
+
   #promo-container > div > a {
     margin-top: 6rem;
   }
@@ -1074,12 +1245,14 @@ body {
 }
 
 @media (min-width: 1024px) {
+
   #movie-cards-container > main {
     width: 25%;
   }
 }
 
 @media (min-width: 1280px) {
+
   #movie-cards-container > main {
     width: 16.666667%;
   }
@@ -1314,6 +1487,95 @@ body {
       format("svg"); /* Legacy iOS */
 }
 
+/* dancing-script-regular - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-500 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-500.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-700 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-600 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+
 #menu-primary-menu {
   background-color: red !important;
   display: flex;
@@ -1352,6 +1614,8 @@ body {
 .fn,
 .url {
   /* background-color: darkmagenta; */
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 .says {
@@ -1365,8 +1629,6 @@ ol {
 }
 .comment-reply-link {
   margin-top: 5% !important;
-}
-.comment-reply-link {
   border: 1px solid black;
   padding: 0.5% 2%;
   /* margin-top: 5% !important; */
@@ -1391,4 +1653,92 @@ ol {
   margin: 1.5% 2%;
   border: 1px solid black;
   padding: 0.5% 2%;
+}
+
+.hover\:cursor-pointer:hover {
+  cursor: pointer;
+}
+
+@media (min-width: 640px) {
+
+  .sm\:mx-40 {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .md\:visible {
+    visibility: visible;
+  }
+
+  .md\:hidden {
+    display: none;
+  }
+
+  .md\:h-fit {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+
+  .md\:w-fit {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-evenly {
+    justify-content: space-evenly;
+  }
+
+  .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-x-reverse: 0;
+    margin-right: calc(2rem * var(--tw-space-x-reverse));
+    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:px-10 {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .md\:py-5 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .xl\:relative {
+    position: relative;
+  }
+
+  .xl\:left-10 {
+    left: 2.5rem;
+  }
+
+  .xl\:mx-72 {
+    margin-left: 18rem;
+    margin-right: 18rem;
+  }
+
+  .xl\:flex-row {
+    flex-direction: row;
+  }
+
+  .xl\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }

@@ -33,6 +33,20 @@ function cp_register_basic_supports(){
 			)
 		);
 
+    // Support for custom logo
+    add_theme_support(
+			'custom-logo',
+			array(
+				'height'               => 100,
+				'width'                => 300,
+				'flex-width'           => true,
+				'flex-height'          => true,
+				'unlink-homepage-logo' => false,
+			)
+		); 
+    
+    add_theme_support( 'custom-header' );
+
 }
 
 function cp_register_all_custom_support(){
@@ -109,13 +123,13 @@ body {
 
 h1 {
     color: <?php echo get_theme_mod("global-heading-one-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 
 h2 {
     color: <?php echo get_theme_mod("global-heading-two-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 
@@ -124,7 +138,7 @@ h4,
 h5,
 h6 {
     color: <?php echo get_theme_mod("global-heading-three-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 
@@ -133,13 +147,13 @@ span,
 section,
 article {
     color: <?php echo get_theme_mod("global-heading-text-color-setting") ?>;
-    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-family: <?php echo get_theme_mod("global-heading-text-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 
 a {
     color: <?php echo get_theme_mod("global-heading-text-color-setting") ?>;
-    font-family: <?php echo get_theme_mod("landing-page-title-font-type-setting")?>;
+    font-family: <?php echo get_theme_mod("global-heading-link-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 </style>

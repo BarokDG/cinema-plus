@@ -1,6 +1,6 @@
 <?php
 
-// get_header();
+get_header();
 
 if ( have_posts() ) {
 

@@ -137,11 +137,11 @@ class CinemaPlusCustomizer{
          // Add Section
         $this -> add_new_section($wp_customize,"global-values-font-section","Typography","2","1","global-values-panel");
         // Add Setting for Colors
-        $this -> add_new_setting($wp_customize,"global-heading-one-font-family-setting","inherit","");
-        $this -> add_new_setting($wp_customize,"global-heading-two-font-family-setting","inherit","");
-        $this -> add_new_setting($wp_customize,"global-heading-three-font-family-setting","inherit","");
-        $this -> add_new_setting($wp_customize,"global-heading-text-font-family-setting","inherit","");
-        $this -> add_new_setting($wp_customize,"global-heading-link-font-family-setting","inherit","");
+        $this -> add_new_setting($wp_customize,"global-heading-one-font-family-setting","Spicy Rice","");
+        $this -> add_new_setting($wp_customize,"global-heading-two-font-family-setting","Spicy Rice","");
+        $this -> add_new_setting($wp_customize,"global-heading-three-font-family-setting","Spicy Rice","");
+        $this -> add_new_setting($wp_customize,"global-heading-text-font-family-setting","Open Sans","");
+        $this -> add_new_setting($wp_customize,"global-heading-link-font-family-setting","Dancing Script","");
 
          $wp_customize -> add_control(
              new WP_Customize_Control($wp_customize,'global-heading-one-font-family-control',array(
@@ -149,7 +149,7 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-one-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Poppins"=>"Poppins","Dancing Script" => "Dancing Script","Lobster Two" => "Lobster Two","inherit"=>"inherit"),
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
 
@@ -159,7 +159,7 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-two-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Poppins"=>"Poppins","Dancing Script" => "Dancing Script","Lobster Two" => "Lobster Two","inherit"=>"inherit"),
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
 
@@ -169,7 +169,7 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-three-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Poppins"=>"Poppins","Dancing Script" => "Dancing Script","Lobster Two" => "Lobster Two","inherit"=>"inherit"),
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
 
@@ -179,7 +179,7 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-text-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Poppins"=>"Poppins","Dancing Script" => "Dancing Script","Lobster Two" => "Lobster Two","inherit"=>"inherit"),
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
          $wp_customize -> add_control(
@@ -188,7 +188,7 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-link-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Poppins"=>"Poppins","Dancing Script" => "Dancing Script","Lobster Two" => "Lobster Two","inherit"=>"inherit"),
+               'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
     }
