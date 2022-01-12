@@ -10,20 +10,30 @@ function cp_register_basic_supports(){
     
     // Support for Post Thumbnails/Featured Image : size of image will be decided at render time
     add_theme_support( 'post-thumbnails' );
-    // cp_custom_logo_setup();
-}
 
-// function cp_custom_logo_setup() {
-//     $defaults = array(
-//         'height'               => 60,
-//         'width'                => 100,
-//         // 'flex-height'          => true,
-//         // 'flex-width'           => true,
-//         'header-text'          => array( 'site-title', 'site-description' ),
-//     );
- 
-//     add_theme_support( 'custom-logo', $defaults );
-// }
+    // Support for Different post formats
+	add_theme_support(
+			'post-formats',
+			array(
+				'aside',
+			)
+		);
+
+    // Activate HTML5 Features
+   add_theme_support(
+			'html5',
+			array(
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+				'style',
+				'script',
+				'navigation-widgets',
+			)
+		);
+
+}
 
 function cp_register_all_custom_support(){
     cp_register_basic_supports();
