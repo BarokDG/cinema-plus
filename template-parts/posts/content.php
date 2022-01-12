@@ -8,9 +8,7 @@ get_template_part("/template-parts/posts/parts/posts-header");
     <?php get_template_part("/template-parts/posts/parts/posts-content");?>
 </article>
 
-<section>
-    <?php get_template_part("/template-parts/posts/parts/post-navigation") ?>
-</section>
+
 
 <?php
 // If comments are open or there is at least one comment, load up the comment template.

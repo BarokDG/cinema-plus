@@ -358,11 +358,67 @@ body {
   ========================================
 */
 #comments {
-  background-color: red;
-  padding-top: 3%;
+  /* background-color: red; */
+  padding: 3% 2%;
   border-top: 1px solid black;
 }
 
 .comment-meta {
+  /* background-color: green; */
+  /* display: flex; */
+}
+/* Space Between Each Comment */
+.comment-body {
+  margin-top: 3%;
+}
+.comment-author {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.comment-author img {
+  margin-right: 1%;
+}
+.fn,
+.url {
+  /* background-color: darkmagenta; */
+  width: fit-content;
+}
+.says {
+  display: none !important;
+}
+ol {
+  list-style: none;
+}
+.comment-content {
+  padding-bottom: 2%;
+}
+.comment-reply-link {
+  margin-top: 5% !important;
+}
+.comment-reply-link {
+  border: 1px solid black;
+  padding: 0.5% 2%;
+  /* margin-top: 5% !important; */
+}
+.comment-form-comment label {
+  display: none;
+}
+
+#comment {
+  margin: 1.5% 2%;
+  padding: 2% 3%;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 80%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+#submit {
+  margin: 1.5% 2%;
+  border: 1px solid black;
+  padding: 0.5% 2%;
 }
