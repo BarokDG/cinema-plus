@@ -24,7 +24,10 @@ class CinemaPlusCustomizer{
 */
     public function register_customizer_sections($wp_customize){
         $this -> global_values_customizer($wp_customize);
-        $this -> landing_page_customizer($wp_customize);
+
+        $this -> header_values_customizer($wp_customize);
+        
+        // $this -> landing_page_customizer($wp_customize);
     }
 
 
@@ -191,6 +194,50 @@ class CinemaPlusCustomizer{
                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
             ))
         );
+    }
+
+
+/*
+    ========================================
+    Header Customizer Function : All Settings and Controls for Landing Page
+    ========================================
+*/ 
+    private function header_values_customizer($wp_customize){
+        // Define All Controls and Settings pair for Landing Page values
+        $this -> add_new_section($wp_customize,"header_values_section","Header","Customize Header Values","1","");
+
+        // Header Font-Family
+        $this -> add_new_setting($wp_customize,"header_values_font_family_setting","Spicy Rice","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'header_values_font_family_control',array(
+                'label' => __("Header Font","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_font_family_setting',
+                 'type' => 'select',
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+            ))
+        );
+
+        // Header Background Color
+        $this -> add_new_setting($wp_customize,"header_values_background_color_setting","#ff0000","");
+        $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_background_color_control',array(
+                'label' => __("Header Background","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_background_color_setting',
+            ))
+        );
+
+        // Header Foreground Color
+        $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
+        $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
+                'label' => __("Header Foreground","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_foreground_color_setting',
+            ))
+        );
+
     }
 
 /*

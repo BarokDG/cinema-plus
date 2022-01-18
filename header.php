@@ -1,4 +1,16 @@
-<?php if (!defined('ABSPATH')) { exit; }?>
+<?php if (!defined('ABSPATH')) { exit; }
+/*
+<?php 
+                    if(has_custom_logo(  )){
+                        the_custom_logo(  );
+                    } else{
+                        echo get_bloginfo( 'name' );
+                    }
+                ?>
+*/
+?>
+
+
 
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -15,52 +27,38 @@
 </head>
 
 <body>
-    <header id="header-container">
-        <?php
-            wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
-        ?>
-    </header>
-    <nav class="flex flex-row justify-around md:justify-evenly items-center mb-5 text-white bg-slate-500">
+    <nav id='header-container' class="flex flex-row justify-around md:justify-evenly items-center mb-5 text-white">
         <div id="nav-logo" class="hover:cursor-pointer">
-
-
-            <a class="font-spicy text-4xl">
-                <?php 
-                    if(has_custom_logo(  )){
-                        the_custom_logo(  );
-                    } else{
-                        echo get_bloginfo( 'name' );
-                    }
-                ?>
+            <a class="font-spicy">
+                Logo Goes Here
             </a>
-            <h4 class="font-sans lowercase">
+            <h6 class="font-sans lowercase">
                 <?php
                 echo get_bloginfo( 'description' );
                 ?>
-            </h4>
+            </h6>
 
         </div>
-        <div id="nav-items"
-            class="invisible h-0 w-0 md:visible md:h-fit md:w-fit flex flex-col md:flex-row md:space-x-8 uppercase font-sans text-md">
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">Menu</a>
-            <a class="hover:text-primary hover:cursor-pointer">
-                <svg class="svg-icon search-icon h-6 w-6" aria-labelledby="title desc" role="img"
-                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                    <title id="title">Search Icon</title>
-                    <desc id="desc">A magnifying glass icon.</desc>
-                    <g class="search-path" fill="none" stroke="#ffffff">
-                        <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                        <circle cx="8" cy="8" r="7" />
-                    </g>
-                </svg>
-            </a>
+
+        <div id="nav-items" class="invisible md:visible uppercase font-sans text-md">
+            <?php
+            wp_nav_menu( array( 'theme_location' => 'main-menu','menu_id'=>'top-bar-menu' ) );
+            ?>
+
         </div>
+
+        <a id="search-icon" class="hover:text-primary hover:cursor-pointer">
+            <svg class="svg-icon search-icon h-6 w-6" aria-labelledby="title desc" role="img"
+                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
+                <title id="title">Search Icon</title>
+                <desc id="desc">A magnifying glass icon.</desc>
+                <g class="search-path" fill="none" stroke="#ffffff">
+                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
+                    <circle cx="8" cy="8" r="7" />
+                </g>
+            </svg>
+        </a>
+
         <div class="md:hidden">
             <button id="ham">
                 <svg class="w-10 h-10 text-gray-500" x-show="!showMenu" fill="none" stroke-linecap="round"
@@ -71,26 +69,13 @@
         </div>
     </nav>
     <div id="nav-items-mobile"
-        class="hidden flex flex-col space-y-8 w-screen h-screen fixed top-0 bg-white font-sans text-3xl px-10 bg-primary text-tertiary z-10">
-        <div id="close" class="self-end mx-8 my-4">X</div>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>Menu</a>
-        <a>
-            <svg class="svg-icon search-icon h-6 w-6 font-extrabold" aria-labelledby="title desc" role="img"
-                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
-                <title id="title">Search Icon</title>
-                <desc id="desc">A magnifying glass icon.</desc>
-                <g class="search-path" fill="none" stroke="#0c4b65">
-                    <path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4" />
-                    <circle cx="8" cy="8" r="7" />
-                </g>
-            </svg>
-        </a>
+        class="hidden flex flex-col space-y-8 w-screen h-screen fixed top-0 right-0 font-sans text-3xl px-10 bg-primary text-tertiary z-10">
+        <!-- <div id="close" class="self-end mx-8 my-4">
+            CLOSE
+        </div> -->
+        <?php
+            wp_nav_menu( array( 'theme_location' => 'main-menu','menu_id'=>'mobile-menu' ) );
+            ?>
     </div>
 
     <script>
@@ -100,8 +85,8 @@
 
     ham.addEventListener("click", toggleMenu);
     ham.addEventListener("touch", toggleMenu);
-    close.addEventListener("click", toggleMenu);
-    close.addEventListener("touch", toggleMenu);
+    // close.addEventListener("click", toggleMenu);
+    // close.addEventListener("touch", toggleMenu);
 
     function toggleMenu() {
         if (navItems.classList.contains("hidden")) {
@@ -111,3 +96,46 @@
         }
     }
     </script>
+
+
+    <style>
+    #header-container {
+        padding: 1% 3% 1% 5%;
+        /* background-color: red; */
+    }
+
+    #nav-logo {
+        width: 30%;
+    }
+
+    #nav-items {
+        width: 65%;
+    }
+
+    #search-icon {
+        width: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #top-bar-menu {
+        display: flex;
+        justify-content: flex-end;
+        width: 100% !important;
+    }
+
+    #top-bar-menu li {
+        padding: 0 2.5%;
+    }
+
+
+    #nav-items-mobile {
+        background-color: white;
+        padding-top: 20%;
+    }
+
+    #mobile-menu li {
+        margin-top: 3%;
+    }
+    </style>
