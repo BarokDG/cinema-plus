@@ -1,15 +1,4 @@
-<?php if (!defined('ABSPATH')) { exit; }
-/*
-<?php 
-                    if(has_custom_logo(  )){
-                        the_custom_logo(  );
-                    } else{
-                        echo get_bloginfo( 'name' );
-                    }
-                ?>
-*/
-?>
-
+<?php if (!defined('ABSPATH')) { exit; }?>
 
 
 <!DOCTYPE html>
@@ -26,17 +15,14 @@
 
 </head>
 
-<body>
+<body id='body'>
     <nav id='header-container' class="flex flex-row justify-around md:justify-evenly items-center mb-5 text-white">
-        <div id="nav-logo" class="hover:cursor-pointer">
-            <a class="font-spicy">
-                Logo Goes Here
-            </a>
-            <h6 class="font-sans lowercase">
-                <?php
-                echo get_bloginfo( 'description' );
-                ?>
-            </h6>
+        <div id="nav-logo" class="hover:cursor-pointer ">
+            <?php if(display_header_text(  ) == 1){
+                get_template_part("/template-parts/header/tagline","display");
+            }else if (has_custom_logo(  )){
+                 get_template_part("/template-parts/header/image","display");
+            }?>
 
         </div>
 
@@ -95,13 +81,39 @@
             navItems.classList.add("hidden");
         }
     }
+
+    <?php
+    if(get_theme_mod("header_values_sticky_setting") == "Yes"){?>
+    document.querySelector("#header-container").classList.add("sticky");
+    <?php }
+    else{?>
+    document.querySelector("#header-container").classList.remove("sticky");
+    <?php } ?>
+
+
+
+
+
+    window.onscroll = function() {
+
+        if (document.documentElement.scrollTop > 350) {
+            console.log("Now")
+            document.querySelector("#header-container").classList.add("scrolled-sticky");
+        } else {
+            document.querySelector("#header-container").classList.remove("scrolled-sticky");
+        }
+    };
     </script>
 
 
     <style>
+    .sticky {
+        position: fixed !important;
+    }
+
+
     #header-container {
         padding: 1% 3% 1% 5%;
-        /* background-color: red; */
     }
 
     #nav-logo {
@@ -124,6 +136,8 @@
         justify-content: flex-end;
         width: 100% !important;
     }
+
+
 
     #top-bar-menu li {
         padding: 0 2.5%;
