@@ -433,11 +433,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .relative {
   position: relative;
 }
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+}
 .top-20 {
   top: 5rem;
 }
 .top-0 {
   top: 0px;
+}
+.right-0 {
+  right: 0px;
 }
 .z-0 {
   z-index: 0;
@@ -445,8 +452,15 @@ Ensure the default browser behavior of the `hidden` attribute.
 .z-10 {
   z-index: 10;
 }
+.m-4 {
+  margin: 1rem;
+}
 .m-10 {
   margin: 2.5rem;
+}
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
 }
 .my-4 {
   margin-top: 1rem;
@@ -455,6 +469,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
+}
+.mb-16 {
+  margin-bottom: 4rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.ml-8 {
+  margin-left: 2rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.ml-10 {
+  margin-left: 2.5rem;
+}
+.mt-3 {
+  margin-top: 0.75rem;
+}
+.ml-3 {
+  margin-left: 0.75rem;
 }
 .mb-5 {
   margin-bottom: 1.25rem;
@@ -465,20 +500,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mt-6 {
   margin-top: 1.5rem;
 }
-.mt-2 {
-  margin-top: 0.5rem;
-}
 .mb-4 {
   margin-bottom: 1rem;
+}
+.block {
+  display: block;
 }
 .flex {
   display: flex;
 }
 .hidden {
   display: none;
-}
-.h-0 {
-  height: 0px;
 }
 .h-6 {
   height: 1.5rem;
@@ -505,9 +537,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: -moz-fit-content;
   width: fit-content;
 }
-.w-0 {
-  width: 0px;
-}
 .w-6 {
   width: 1.5rem;
 }
@@ -528,6 +557,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-\[600px\] {
   width: 600px;
+}
+.max-w-screen-lg {
+  max-width: 1024px;
 }
 .flex-grow {
   flex-grow: 1;
@@ -553,6 +585,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .justify-evenly {
   justify-content: space-evenly;
 }
+.gap-4 {
+  gap: 1rem;
+}
+.gap-6 {
+  gap: 1.5rem;
+}
 .gap-y-16 {
   row-gap: 4rem;
 }
@@ -572,16 +610,38 @@ Ensure the default browser behavior of the `hidden` attribute.
 .self-center {
   align-self: center;
 }
+.overflow-hidden {
+  overflow: hidden;
+}
+.rounded-lg {
+  border-radius: 0.5rem;
+}
 .rounded-\[10px\] {
   border-radius: 10px;
+}
+.bg-gray-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 .bg-slate-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
-.bg-white {
+.bg-primary {
   --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  background-color: rgb(239 207 79 / var(--tw-bg-opacity));
+}
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(194 89 52 / var(--tw-bg-opacity));
+}
+.bg-tertiary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(12 75 101 / var(--tw-bg-opacity));
+}
+.bg-tertiaryDark {
+  --tw-bg-opacity: 1;
+  background-color: rgb(10 63 85 / var(--tw-bg-opacity));
 }
 .bg-red-400 {
   --tw-bg-opacity: 1;
@@ -623,8 +683,36 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-no-repeat {
   background-repeat: no-repeat;
 }
+.object-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 .p-5 {
   padding: 1.25rem;
+}
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.py-2 {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 .py-10 {
   padding-top: 2.5rem;
@@ -662,9 +750,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 1.5rem;
   padding-right: 1.5rem;
 }
-.py-6 {
+.pt-2 {
+  padding-top: 0.5rem;
+}
+.pt-6 {
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 .pt-32 {
   padding-top: 8rem;
@@ -693,31 +783,37 @@ Ensure the default browser behavior of the `hidden` attribute.
 .font-sans {
   font-family: Open Sans;
 }
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
 .text-lg {
   font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-xl {
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.font-extrabold {
+  font-weight: 800;
 }
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.font-medium {
+  font-weight: 500;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.font-semibold {
+  font-weight: 600;
 }
 .font-bold {
   font-weight: 700;
-}
-.font-extrabold {
-  font-weight: 800;
 }
 .uppercase {
   text-transform: uppercase;
@@ -725,13 +821,42 @@ Ensure the default browser behavior of the `hidden` attribute.
 .lowercase {
   text-transform: lowercase;
 }
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+.leading-7 {
+  line-height: 1.75rem;
+}
+.leading-normal {
+  line-height: 1.5;
+}
+.tracking-tight {
+  letter-spacing: -0.025em;
 }
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+.text-gray-900 {
+  --tw-text-opacity: 1;
+  color: rgb(17 24 39 / var(--tw-text-opacity));
+}
+.text-indigo-600 {
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+.text-yellow-500 {
+  --tw-text-opacity: 1;
+  color: rgb(234 179 8 / var(--tw-text-opacity));
+}
+.text-yellow-400 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+.text-tertiary {
+  --tw-text-opacity: 1;
+  color: rgb(12 75 101 / var(--tw-text-opacity));
 }
 .text-sky-400 {
   --tw-text-opacity: 1;
@@ -908,8 +1033,6 @@ body {
 }
 
 #landing-page-container {
-  animation: animateLandingBackground 32s ease-in-out infinite;
-  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -930,6 +1053,12 @@ body {
   }
 }
 
+#landing-page-container {
+  height: 130vh;
+  animation: animateLandingBackground 32s ease-in-out infinite;
+  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
+}
+
 #landing-page-container > h1 {
   font-family: Spicy Rice;
   font-size: 32px;
@@ -946,9 +1075,6 @@ body {
 }
 
 #landing-page-container > h2 {
-
-  /* Replace */
-  letter-spacing: 1px;
   margin-top: -1.5rem;
   font-family: Spicy Rice;
   font-size: 70px;
@@ -966,6 +1092,12 @@ body {
   #landing-page-container > h2 {
     font-size: 120px;
   }
+}
+
+#landing-page-container > h2 {
+
+  /* Replace */
+  letter-spacing: 1px;
 }
 
 #landing-page-container > span {
@@ -1077,12 +1209,6 @@ body {
   ========================================
 */
 #promo-container {
-  background-image: url("../img/promo/notes.png");
-  transform: translateY(-35%);
-  -webkit-transform: translateY(-35%);
-  -moz-transform: translateY(-35%);
-  -ms-transform: translateY(-35%);
-  -o-transform: translateY(-35%);
   margin-right: auto;
   margin-left: auto;
   width: 100vw;
@@ -1098,6 +1224,14 @@ body {
   #promo-container {
     width: 75%;
   }
+}
+#promo-container {
+  background-image: url("../img/promo/notes.png");
+  transform: translateY(-35%);
+  -webkit-transform: translateY(-35%);
+  -moz-transform: translateY(-35%);
+  -ms-transform: translateY(-35%);
+  -o-transform: translateY(-35%);
 }
 #promo-container > h1 {
   font-size: 22px;
@@ -1150,12 +1284,12 @@ body {
   }
 }
 #promo-container > div {
-  /* height: 15vh; */
   margin-top: 3rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding-bottom: 4rem;
+  /* height: 15vh; */
 }
 #promo-container > div > a:nth-of-type(1) {
   margin-right: 1.5rem;
@@ -1225,15 +1359,14 @@ body {
 */
 
 #movie-cards-container {
-  /* p-3 lg:px-12 sm:justify-between */
   display: flex;
   width: 100vw;
   flex-wrap: wrap;
   padding: 1.5rem;
+  /* p-3 lg:px-12 sm:justify-between */
 }
 
 #movie-cards-container > main {
-  overflow: hidden;
   margin: 0px;
   margin-top: 2.5rem;
   margin-right: 0.75rem;
@@ -1257,6 +1390,10 @@ body {
     width: 16.666667%;
   }
 }
+
+#movie-cards-container > main {
+  overflow: hidden;
+}
 #movie-cards-container > main > div {
   position: relative;
   margin-top: 0px;
@@ -1270,16 +1407,6 @@ body {
 }
 
 #movie-card-overlay {
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transition: all 1s;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
   position: absolute;
   display: flex;
   height: 100%;
@@ -1291,16 +1418,26 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
   opacity: 0;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
 }
 /* Animation Style */
 #movie-card-image:hover #movie-card-overlay {
+  opacity: 1;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   /* opacity: 1; */
-  opacity: 1;
 }
 
 #movie-cards-container > main:nth-of-type(1) > div {
@@ -1659,11 +1796,21 @@ ol {
   cursor: pointer;
 }
 
+.hover\:text-primary:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 207 79 / var(--tw-text-opacity));
+}
+
 @media (min-width: 640px) {
 
   .sm\:mx-40 {
     margin-left: 10rem;
     margin-right: 10rem;
+  }
+
+  .sm\:text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 }
 
@@ -1673,34 +1820,20 @@ ol {
     visibility: visible;
   }
 
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:hidden {
     display: none;
   }
 
-  .md\:h-fit {
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
-  }
-
-  .md\:w-fit {
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-
-  .md\:flex-row {
-    flex-direction: row;
+  .md\:justify-start {
+    justify-content: flex-start;
   }
 
   .md\:justify-evenly {
     justify-content: space-evenly;
-  }
-
-  .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(2rem * var(--tw-space-x-reverse));
-    margin-left: calc(2rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .md\:px-10 {
@@ -1715,6 +1848,16 @@ ol {
 
   .md\:text-left {
     text-align: left;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 
