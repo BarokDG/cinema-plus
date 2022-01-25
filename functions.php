@@ -37,8 +37,8 @@ function cp_register_basic_supports(){
     add_theme_support(
 			'custom-logo',
 			array(
-				'height'               => 100,
-				'width'                => 300,
+				'height'               => 200,
+				'width'                => 400,
 				'flex-width'           => true,
 				'flex-height'          => true,
 				'unlink-homepage-logo' => false,
@@ -46,6 +46,12 @@ function cp_register_basic_supports(){
 		); 
     
     add_theme_support( 'custom-header' );
+
+    // Add support for custom line height controls.
+	add_theme_support( 'custom-line-height' );
+
+	// Add support for experimental cover block spacing.
+	add_theme_support( 'custom-spacing' );
 
 }
 
@@ -88,16 +94,19 @@ add_action( 'wp_enqueue_scripts', "cp_register_all_styles" );
 
 // Function to register one script
 function cp_register_script($script_name,$file_name,$dependencies=array(),$version='1.0',$isDeferred=true){
-    wp_enqueue_script($script_name,$file_name,$dependencies,$version,$isDeferred);
+    wp_enqueue_script($script_name,get_template_directory_uri(  ) . '/assets/js/' .$file_name,$dependencies,$version,$isDeferred);
 }
 
-// Function to register all scripts
-function cp_register_all_scripts(){
+// Function to register customizer scripts
+function cp_register_customize_scripts(){
+    cp_register_script('customize-controls-js',"dynamic-customizer-controls.js");
 
       // Enqueue Each Script -> dependencies,version & isDeferred are optional parameters as they have default values
       cp_register_script("ADD SCRIPT NAME HERE","ADD FILE NAME HERE","ADD DEPENDENCIES HERE","ADD VERSION HERE","ADD isDeferred HERE");
 
 }
+// Hook the function that enqueues all scripts
+add_action( 'customize_controls_enqueue_scripts', "cp_register_customize_scripts" );
 
 /*
     =========================================
@@ -114,32 +123,34 @@ new CinemaPlusCustomizer();
     CSS Customizer Registration
     ========================================= 
 */
-function cp_customize_css(){ ?>
+
+/*
+function cp_customize_global_css(){ ?>
 
 <style>
 body {
-    background-color: <?php echo get_theme_mod("global-site-background-color-setting")?>
+    background-color: <?php echo get_theme_mod("global-site-background-color-setting", 'yellow')?>
 }
 
 h1 {
-    color: <?php echo get_theme_mod("global-heading-one-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-one-color-setting", 'yellow') ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting", 'Dancing Script')?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "54px") ?>;
 }
 
 h2 {
-    color: <?php echo get_theme_mod("global-heading-two-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-two-color-setting", "yellow") ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting", "Lato")?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "42px") ?>;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    color: <?php echo get_theme_mod("global-heading-three-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-three-color-setting", "yellow") ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting", "Lato")?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "32px") ?>;
 }
 
 p,
@@ -150,18 +161,14 @@ article {
     font-family: <?php echo get_theme_mod("global-heading-text-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
-
-a {
-    color: <?php echo get_theme_mod("global-heading-text-color-setting") ?>;
-    font-family: <?php echo get_theme_mod("global-heading-link-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
-}
 </style>
 
 <?php 
 }
 
-add_action( 'wp_head',"cp_customize_css");
+add_action( 'wp_head',"cp_customize_global_css");
+
+*/
 
 /*
     =========================================
@@ -179,4 +186,43 @@ function cp_register_my_menus() {
  }
  add_action( 'init', 'cp_register_my_menus' );
 
+
+ function cp_customize_header_css(){ 
+    //  background-color: <?php echo get_theme_mod("header_values_background_color_setting", "#ff0000") ?>
+<style>
+#header-container {
+    color: <?php echo get_theme_mod("header_values_foreground_color_setting", "#fffff") ?>;
+
+
+    <?php if(get_theme_mod("header_values_background_transparency_setting")=="Yes") {
+        ?>background-color: transparent;
+
+        <?php
+    }
+
+    else {
+        ?>background-color: <?php echo get_theme_mod("header_values_background_color_setting", "#fffff")?> <?php
+    }
+
+    ?>
+}
+
+#header-container,
+#header-container li a {
+    font-family: <?php echo get_theme_mod("header_values_font_family_setting", "Spicy Rice") ?>;
+}
+
+#header-container li a:hover {
+    color: <?php echo get_theme_mod("header_values_hover_color_setting", "red")?>;
+}
+
+.scrolled-sticky {
+    background-color: <?php echo get_theme_mod("header_values_sticky_background_setting")?> !important;
+}
+</style>
+
+<?php 
+}
+
+add_action( 'wp_head',"cp_customize_header_css");
 ?>

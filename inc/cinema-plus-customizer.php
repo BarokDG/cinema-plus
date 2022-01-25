@@ -24,7 +24,10 @@ class CinemaPlusCustomizer{
 */
     public function register_customizer_sections($wp_customize){
         $this -> global_values_customizer($wp_customize);
-        $this -> landing_page_customizer($wp_customize);
+
+        $this -> header_values_customizer($wp_customize);
+        
+        // $this -> landing_page_customizer($wp_customize);
     }
 
 
@@ -193,6 +196,130 @@ class CinemaPlusCustomizer{
         );
     }
 
+
+/*
+    ========================================
+    Header Customizer Function : All Settings and Controls for Header Section
+    ========================================
+*/ 
+    private function header_values_customizer($wp_customize){
+        // Section
+        $this -> add_new_section($wp_customize,"header_values_section","Header","Customize Header Values","1","");
+
+/*
+    ========================================
+    Header Font Family
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_font_family_setting","Spicy Rice","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'header_values_font_family_control',array(
+                'label' => __("Header Font","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_font_family_setting',
+                 'type' => 'select',
+                 'priority' => 1,
+                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+            ))
+        );
+
+/*
+    ========================================
+    Header Foreground Color
+    ========================================
+*/ 
+        // $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
+        // $wp_customize -> add_control(
+        //     new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
+        //         'label' => __("Header Foreground","Cinema Plus"),
+        //         'section' => 'header_values_section',
+        //         'settings' => 'header_values_foreground_color_setting',
+        //         'priority' => 2,
+        //     ))
+        // );
+
+/*
+    ========================================
+    Header Background Transparency
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_background_transparency_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'header_values_background_transparency_control',array(
+                'label' => __("Make Header Transparent","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_background_transparency_setting',
+                 'type' => 'select',
+                 'priority' => 3,
+                'choices' => array("Yes"=>"Yes","No" => "No"),
+            ))
+        );
+
+/*
+    ========================================
+    Background Color
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_background_color_setting","#ffffff","");
+         $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_background_color_control',array(
+                'label' => __("Header Background Color","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_background_color_setting',
+                'priority' => 4,
+            ))
+        );
+
+/*
+    ========================================
+    Navigation Hover Color
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_hover_color_setting","No","");
+         $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_hover_color_control',array(
+                'label' => __("Navigation Hover Color","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_hover_color_setting',
+                'priority' => 5,
+            ))
+        );
+       
+/*
+    ========================================
+    Header Sticky
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_sticky_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'header_values_sticky_control',array(
+                'label' => __("Make Header Sticky","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_sticky_setting',
+                 'type' => 'select',
+                'choices' => array("Yes"=>"Yes","No" => "No"),
+                'priority' => 6,
+            ))
+        );
+
+/*
+    ========================================
+    Header Sticky Background Color
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_sticky_background_setting","#ffffff","");
+         $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_sticky_background_control',array(
+                'label' => __("Sticky Header Background Color","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_sticky_background_setting',
+                'priority' => 7,
+            ))
+        );
+
+
+    }
+
 /*
     ========================================
     Landing Page Customizer Function : All Settings and Controls for Landing Page
@@ -202,5 +329,20 @@ class CinemaPlusCustomizer{
         // Define All Controls and Settings pair for Landing Page values
     }
 }
+
+// File customizer.php
+add_filter(
+    'customize_dynamic_setting_args',
+    function( $setting_args, $setting_id ) {
+        if ( 'siteTitleColorSetting' === $setting_id ) {
+            $setting_args = array(
+                'sanitize_callback' => 'sanitize_hex_color',
+            );
+        }
+        return $setting_args;
+    },
+    10,
+    2
+);
 
 ?>
