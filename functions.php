@@ -1,67 +1,4 @@
 <?php
-
-/*
-    =========================================
-    Register Theme Support
-    =========================================
-*/
-function cp_register_basic_supports(){
-    add_theme_support('title-tag');
-    
-    // Support for Post Thumbnails/Featured Image : size of image will be decided at render time
-    add_theme_support( 'post-thumbnails' );
-
-    // Support for Different post formats
-	add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-			)
-		);
-
-    // Activate HTML5 Features
-   add_theme_support(
-			'html5',
-			array(
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-				'navigation-widgets',
-			)
-		);
-
-    // Support for custom logo
-    add_theme_support(
-			'custom-logo',
-			array(
-				'height'               => 200,
-				'width'                => 400,
-				'flex-width'           => true,
-				'flex-height'          => true,
-				'unlink-homepage-logo' => false,
-			)
-		); 
-    
-    add_theme_support( 'custom-header' );
-
-    // Add support for custom line height controls.
-	add_theme_support( 'custom-line-height' );
-
-	// Add support for experimental cover block spacing.
-	add_theme_support( 'custom-spacing' );
-
-}
-
-function cp_register_all_custom_support(){
-    cp_register_basic_supports();
-}
-
-
-add_action( 'after_setup_theme', 'cp_register_all_custom_support' );
-
 /*
     =========================================
     Register Styles
@@ -77,6 +14,9 @@ function cp_register_style($style_name,$file_name,$dependencies=array(),$version
 function cp_register_all_styles(){
     // /assets/css/
     cp_register_style('tailwind-css','tailwind.prod.css');
+    wp_deregister_script( 'jquery' );
+     cp_register_script('cp-jquery',"jquery.js");
+     cp_register_script('cp-main-js',"cinema-plus.js",array('cp-jquery'));
     
     // Enqueue Each Style -> dependencies, version & screen type are optional parameters as they have default values
     cp_register_style('ADD LOCAL STYLE NAME HERE','ADD FILENAME HERE',"ADD DEPENDENCIES HERE","ADD VERSION HERE","ADD SCREEN TYPE HERE");
@@ -107,14 +47,6 @@ function cp_register_customize_scripts(){
 }
 // Hook the function that enqueues all scripts
 add_action( 'customize_controls_enqueue_scripts', "cp_register_customize_scripts" );
-
-/*
-    =========================================
-    Create Cinema Plus Customizer Class
-    ========================================= 
-*/
-require get_stylesheet_directory(  ) . "/inc/cinema-plus-customizer.php";
-new CinemaPlusCustomizer();
 
 
 
@@ -170,59 +102,44 @@ add_action( 'wp_head',"cp_customize_global_css");
 
 */
 
+
 /*
     =========================================
-    Menu Registration
+    Include Files
     ========================================= 
 */
 
-function cp_register_my_menus() {
-  register_nav_menus(
-    array(
-      'main-menu' => __( 'Main Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
-     )
-   );
- }
- add_action( 'init', 'cp_register_my_menus' );
+// Admin
+require_once (get_template_directory(  ) .'/inc/cinema-plus-admin.php');
+
+// CSS
+require_once (get_template_directory(  ) .'/inc/cinema-plus-css.php');
+
+// Customizer
+require_once (get_template_directory(  ) . "/inc/cinema-plus-customizer.php");
+
+// Theme Support
+require_once (get_template_directory(  ) .'/inc/cinema-plus-theme-support.php');
+
+// Custom Post Type
+require_once (get_template_directory(  ) .'/inc/cinema-plus-custom-post-type.php');
+
+// Custom Post Type
+require_once (get_template_directory(  ) .'/inc/cinema-plus-short-code.php');
 
 
- function cp_customize_header_css(){ 
-    //  background-color: <?php echo get_theme_mod("header_values_background_color_setting", "#ff0000") ?>
-<style>
-#header-container {
-    color: <?php echo get_theme_mod("header_values_foreground_color_setting", "#fffff") ?>;
+// Ajax
+require_once (get_template_directory(  ) .'/inc/ajax.php');
 
 
-    <?php if(get_theme_mod("header_values_background_transparency_setting")=="Yes") {
-        ?>background-color: transparent;
 
-        <?php
-    }
+/*
+    =========================================
+    Create Cinema Plus Customizer Class
+    ========================================= 
+*/
 
-    else {
-        ?>background-color: <?php echo get_theme_mod("header_values_background_color_setting", "#fffff")?> <?php
-    }
+new CinemaPlusCustomizer();
 
-    ?>
-}
 
-#header-container,
-#header-container li a {
-    font-family: <?php echo get_theme_mod("header_values_font_family_setting", "Spicy Rice") ?>;
-}
-
-#header-container li a:hover {
-    color: <?php echo get_theme_mod("header_values_hover_color_setting", "red")?>;
-}
-
-.scrolled-sticky {
-    background-color: <?php echo get_theme_mod("header_values_sticky_background_setting")?> !important;
-}
-</style>
-
-<?php 
-}
-
-add_action( 'wp_head',"cp_customize_header_css");
 ?>
