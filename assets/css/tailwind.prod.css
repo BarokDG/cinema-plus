@@ -430,6 +430,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -437,20 +440,32 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: -webkit-sticky;
   position: sticky;
 }
-.top-20 {
-  top: 5rem;
+.left-1\/2 {
+  left: 50%;
+}
+.top-1\/2 {
+  top: 50%;
 }
 .top-0 {
   top: 0px;
 }
+.top-20 {
+  top: 5rem;
+}
 .right-0 {
   right: 0px;
+}
+.-z-10 {
+  z-index: -10;
 }
 .z-0 {
   z-index: 0;
 }
 .z-10 {
   z-index: 10;
+}
+.m-0 {
+  margin: 0px;
 }
 .m-4 {
   margin: 1rem;
@@ -469,6 +484,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
+}
+.mt-10 {
+  margin-top: 2.5rem;
 }
 .mb-16 {
   margin-bottom: 4rem;
@@ -506,20 +524,23 @@ Ensure the default browser behavior of the `hidden` attribute.
 .block {
   display: block;
 }
+.inline-block {
+  display: inline-block;
+}
 .flex {
   display: flex;
 }
 .hidden {
   display: none;
 }
+.h-screen {
+  height: 100vh;
+}
 .h-6 {
   height: 1.5rem;
 }
 .h-10 {
   height: 2.5rem;
-}
-.h-screen {
-  height: 100vh;
 }
 .h-fit {
   height: -webkit-fit-content;
@@ -528,6 +549,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .h-96 {
   height: 24rem;
+}
+.w-full {
+  width: 100%;
+}
+.w-1\/3 {
+  width: 33.333333%;
 }
 .w-4\/5 {
   width: 80%;
@@ -546,9 +573,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-screen {
   width: 100vw;
 }
-.w-full {
-  width: 100%;
-}
 .w-3\/5 {
   width: 60%;
 }
@@ -558,11 +582,22 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[600px\] {
   width: 600px;
 }
+.max-w-4xl {
+  max-width: 56rem;
+}
 .max-w-screen-lg {
   max-width: 1024px;
 }
 .flex-grow {
   flex-grow: 1;
+}
+.-translate-x-1\/2 {
+  --tw-translate-x: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.-translate-y-1\/2 {
+  --tw-translate-y: -50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .flex-row {
   flex-direction: row;
@@ -613,11 +648,24 @@ Ensure the default browser behavior of the `hidden` attribute.
 .overflow-hidden {
   overflow: hidden;
 }
+.rounded-3xl {
+  border-radius: 1.5rem;
+}
 .rounded-lg {
   border-radius: 0.5rem;
 }
 .rounded-\[10px\] {
   border-radius: 10px;
+}
+.border-2 {
+  border-width: 2px;
+}
+.border-solid {
+  border-style: solid;
+}
+.bg-orange-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 88 12 / var(--tw-bg-opacity));
 }
 .bg-gray-300 {
   --tw-bg-opacity: 1;
@@ -690,6 +738,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .p-5 {
   padding: 1.25rem;
 }
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.px-9 {
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+}
 .py-24 {
   padding-top: 6rem;
   padding-bottom: 6rem;
@@ -721,14 +781,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
-}
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 .py-8 {
   padding-top: 2rem;
@@ -780,12 +832,27 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-justify {
   text-align: justify;
 }
+.font-serif {
+  font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+}
 .font-sans {
   font-family: Open Sans;
+}
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .text-3xl {
   font-size: 1.875rem;
@@ -802,6 +869,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
+}
+.font-black {
+  font-weight: 900;
+}
+.font-normal {
+  font-weight: 400;
 }
 .font-extrabold {
   font-weight: 800;
@@ -830,6 +903,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 .tracking-tight {
   letter-spacing: -0.025em;
 }
+.text-gray-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
+}
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .text-gray-500 {
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
@@ -849,10 +934,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-yellow-400 {
   --tw-text-opacity: 1;
   color: rgb(250 204 21 / var(--tw-text-opacity));
-}
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 .text-tertiary {
   --tw-text-opacity: 1;
@@ -1033,6 +1114,8 @@ body {
 }
 
 #landing-page-container {
+  animation: animateLandingBackground 32s ease-in-out infinite;
+  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -1053,12 +1136,6 @@ body {
   }
 }
 
-#landing-page-container {
-  height: 130vh;
-  animation: animateLandingBackground 32s ease-in-out infinite;
-  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
-}
-
 #landing-page-container > h1 {
   font-family: Spicy Rice;
   font-size: 32px;
@@ -1075,6 +1152,9 @@ body {
 }
 
 #landing-page-container > h2 {
+
+  /* Replace */
+  letter-spacing: 1px;
   margin-top: -1.5rem;
   font-family: Spicy Rice;
   font-size: 70px;
@@ -1092,12 +1172,6 @@ body {
   #landing-page-container > h2 {
     font-size: 120px;
   }
-}
-
-#landing-page-container > h2 {
-
-  /* Replace */
-  letter-spacing: 1px;
 }
 
 #landing-page-container > span {
@@ -1209,6 +1283,12 @@ body {
   ========================================
 */
 #promo-container {
+  background-image: url("../img/promo/notes.png");
+  transform: translateY(-35%);
+  -webkit-transform: translateY(-35%);
+  -moz-transform: translateY(-35%);
+  -ms-transform: translateY(-35%);
+  -o-transform: translateY(-35%);
   margin-right: auto;
   margin-left: auto;
   width: 100vw;
@@ -1224,14 +1304,6 @@ body {
   #promo-container {
     width: 75%;
   }
-}
-#promo-container {
-  background-image: url("../img/promo/notes.png");
-  transform: translateY(-35%);
-  -webkit-transform: translateY(-35%);
-  -moz-transform: translateY(-35%);
-  -ms-transform: translateY(-35%);
-  -o-transform: translateY(-35%);
 }
 #promo-container > h1 {
   font-size: 22px;
@@ -1284,12 +1356,12 @@ body {
   }
 }
 #promo-container > div {
+  /* height: 15vh; */
   margin-top: 3rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding-bottom: 4rem;
-  /* height: 15vh; */
 }
 #promo-container > div > a:nth-of-type(1) {
   margin-right: 1.5rem;
@@ -1359,14 +1431,15 @@ body {
 */
 
 #movie-cards-container {
+  /* p-3 lg:px-12 sm:justify-between */
   display: flex;
   width: 100vw;
   flex-wrap: wrap;
   padding: 1.5rem;
-  /* p-3 lg:px-12 sm:justify-between */
 }
 
 #movie-cards-container > main {
+  overflow: hidden;
   margin: 0px;
   margin-top: 2.5rem;
   margin-right: 0.75rem;
@@ -1390,10 +1463,6 @@ body {
     width: 16.666667%;
   }
 }
-
-#movie-cards-container > main {
-  overflow: hidden;
-}
 #movie-cards-container > main > div {
   position: relative;
   margin-top: 0px;
@@ -1407,6 +1476,16 @@ body {
 }
 
 #movie-card-overlay {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
   position: absolute;
   display: flex;
   height: 100%;
@@ -1418,26 +1497,16 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
   opacity: 0;
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transition: all 1s;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
 }
 /* Animation Style */
 #movie-card-image:hover #movie-card-overlay {
-  opacity: 1;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   /* opacity: 1; */
+  opacity: 1;
 }
 
 #movie-cards-container > main:nth-of-type(1) > div {
@@ -1794,6 +1863,16 @@ ol {
 
 .hover\:cursor-pointer:hover {
   cursor: pointer;
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.hover\:text-orange-600:hover {
+  --tw-text-opacity: 1;
+  color: rgb(234 88 12 / var(--tw-text-opacity));
 }
 
 .hover\:text-primary:hover {

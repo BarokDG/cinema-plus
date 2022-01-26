@@ -1,5 +1,5 @@
 <!-- Display Header -->
-
+<?php get_header();?>
 <div class="h-screen relative block">
       <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 max-w-4xl w-full  text-center px-4">
           <div class="absolute top-0 left-1/2 -translate-x-1/2 -z-10 "> 
@@ -16,5 +16,8 @@
           
       </div>  
     </div>
+
+
+    
 <!-- Display Footer -->
 <?php get_footer();?>
