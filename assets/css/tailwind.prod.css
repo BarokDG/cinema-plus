@@ -430,15 +430,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .fixed {
   position: fixed;
 }
-.relative {
-  position: relative;
-}
 .sticky {
   position: -webkit-sticky;
   position: sticky;
-}
-.top-20 {
-  top: 5rem;
 }
 .top-0 {
   top: 0px;
@@ -446,11 +440,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0 {
   right: 0px;
 }
-.z-0 {
-  z-index: 0;
-}
 .z-10 {
   z-index: 10;
+}
+.z-0 {
+  z-index: 0;
 }
 .m-4 {
   margin: 1rem;
@@ -462,13 +456,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: auto;
   margin-right: auto;
 }
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .mx-8 {
   margin-left: 2rem;
   margin-right: 2rem;
+}
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 .mb-16 {
   margin-bottom: 4rem;
@@ -529,14 +523,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-96 {
   height: 24rem;
 }
-.w-4\/5 {
-  width: 80%;
-}
-.w-fit {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-}
 .w-6 {
   width: 1.5rem;
 }
@@ -545,6 +531,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .w-screen {
   width: 100vw;
+}
+.w-4\/5 {
+  width: 80%;
+}
+.w-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .w-full {
   width: 100%;
@@ -623,25 +617,21 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
-.bg-slate-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
-}
 .bg-primary {
   --tw-bg-opacity: 1;
   background-color: rgb(239 207 79 / var(--tw-bg-opacity));
 }
-.bg-secondary {
+.bg-tertiaryDark {
   --tw-bg-opacity: 1;
-  background-color: rgb(194 89 52 / var(--tw-bg-opacity));
+  background-color: rgb(10 63 85 / var(--tw-bg-opacity));
 }
 .bg-tertiary {
   --tw-bg-opacity: 1;
   background-color: rgb(12 75 101 / var(--tw-bg-opacity));
 }
-.bg-tertiaryDark {
+.bg-secondary {
   --tw-bg-opacity: 1;
-  background-color: rgb(10 63 85 / var(--tw-bg-opacity));
+  background-color: rgb(194 89 52 / var(--tw-bg-opacity));
 }
 .bg-red-400 {
   --tw-bg-opacity: 1;
@@ -714,9 +704,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-left: 0.75rem;
   padding-right: 0.75rem;
 }
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.px-4 {
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .px-16 {
   padding-left: 4rem;
@@ -725,18 +723,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
-}
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 .px-48 {
   padding-left: 12rem;
@@ -756,14 +742,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .pt-6 {
   padding-top: 1.5rem;
 }
+.pt-4 {
+  padding-top: 1rem;
+}
 .pt-32 {
   padding-top: 8rem;
 }
 .pb-10 {
   padding-bottom: 2.5rem;
-}
-.pt-4 {
-  padding-top: 1rem;
 }
 .pt-3 {
   padding-top: 0.75rem;
@@ -1512,6 +1498,78 @@ body {
   margin-right: 0px;
 }
 
+
+
+/* 
+
+  ========================
+  Footer Styles
+  ========================
+
+*/
+
+#subscribe-bar-container {
+  position: relative;
+  top: 5rem;
+}
+
+@media (min-width: 640px) {
+
+  #subscribe-bar-container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  #subscribe-bar-container {
+    margin-left: 18rem;
+    margin-right: 18rem;
+  }
+}
+
+#subscribe-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 207 79 / var(--tw-bg-opacity));
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+
+  #subscribe-bar {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  #subscribe-bar {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  #subscribe-bar {
+    flex-direction: row;
+  }
+}
+
+/* #subscribe-bar-✉ {
+  @apply rounded-[10px] font-4xl text-tertiary w-4/5 self-center p-5 my-4 mx-8 xl:relative xl:left-10 z-0;
+} */
+
+/* #subscribe-bar-btn {
+  @apply bg-secondary text-white uppercase text-xl font-bold w-fit self-center px-16 py-4 rounded-[10px] z-1;
+} */
+
+
+
 /* 
     ==============================
     Open Sans
@@ -1803,11 +1861,6 @@ ol {
 
 @media (min-width: 640px) {
 
-  .sm\:mx-40 {
-    margin-left: 10rem;
-    margin-right: 10rem;
-  }
-
   .sm\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
@@ -1836,16 +1889,6 @@ ol {
     justify-content: space-evenly;
   }
 
-  .md\:px-10 {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-  }
-
-  .md\:py-5 {
-    padding-top: 1.25rem;
-    padding-bottom: 1.25rem;
-  }
-
   .md\:text-left {
     text-align: left;
   }
@@ -1869,11 +1912,6 @@ ol {
 
   .xl\:left-10 {
     left: 2.5rem;
-  }
-
-  .xl\:mx-72 {
-    margin-left: 18rem;
-    margin-right: 18rem;
   }
 
   .xl\:flex-row {
