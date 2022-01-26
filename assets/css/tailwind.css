@@ -1,0 +1,513 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  ========================================
+  Resets
+  ========================================
+*/
+body {
+  overflow-x: hidden;
+}
+
+/*
+  ========================================
+  Landing Page Styles
+  ========================================
+*/
+#header-container {
+  @apply w-screen h-20 absolute left-0 z-50 text-white text-center;
+}
+
+@keyframes animateLandingBackground {
+  0%,
+  100% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url("../img/movies/movie-one.jpg");
+  }
+  12.5% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url("../img/movies/movie-two.jpg");
+  }
+  25% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      ),
+      url("../img/movies/movie-three.jpg");
+  }
+  37.5% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      )
+      url("../img/movies/movie-four.jpg");
+  }
+  50% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      )
+      url("../img/movies/movie-five.jpg");
+  }
+  62.5% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      )
+      url("../img/movies/movie-six.jpg");
+  }
+  75% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      )
+      url("../img/movies/movie-seven.jpg");
+  }
+  87.5% {
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.35),
+        rgba(0, 0, 0, 0.35)
+      )
+      url("../img/movies/movie-eight.jpg");
+  }
+}
+
+#landing-page-container {
+  @apply w-screen h-screen bg-cover bg-no-repeat bg-center bg-fixed pt-0 xl:pt-8 flex flex-col justify-center items-center;
+  height: 130vh;
+  animation: animateLandingBackground 32s ease-in-out infinite;
+  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
+}
+
+#landing-page-container > h1 {
+  @apply text-[32px] xl:text-[48px] text-yellow-300 font-normal font-spice;
+}
+
+#landing-page-container > h2 {
+  @apply text-[70px] xl:text-[120px] text-white font-normal font-spice -mt-6 xl:-mt-10;
+
+  /* Replace */
+  letter-spacing: 1px;
+}
+
+#landing-page-container > span {
+  @apply text-white text-center text-[16px] lg:text-[18px] mt-5 sm:px-12 lg:px-40 xl:px-80;
+}
+
+#landing-page-container > a {
+  @apply text-white sm:text-[16px] lg:text-[18px] rounded-md font-bold mt-16 lg:mt-20 xl:mt-24 bg-red-500 lg:bg-yellow-400 xl:bg-green-500 uppercase py-4 px-8 lg:py-4 lg:px-9 hover:bg-white hover:text-black;
+}
+
+/*
+  ========================================
+  Promotion Strip Styles
+  ========================================
+*/
+#promo-container {
+  @apply bg-yellow-500 w-screen lg:w-9/12 mr-auto ml-auto text-center pt-14  bg-no-repeat bg-center;
+  background-image: url("../img/promo/notes.png");
+  transform: translateY(-35%);
+  -webkit-transform: translateY(-35%);
+  -moz-transform: translateY(-35%);
+  -ms-transform: translateY(-35%);
+  -o-transform: translateY(-35%);
+}
+#promo-container > h1 {
+  @apply text-red-500 text-[22px] xl:text-[24px] font-bold;
+}
+#promo-container > h2 {
+  @apply text-white -mt-1 lg:-mt-2 text-[54px] xl:text-[72px] font-extrabold;
+}
+#promo-container > h3 {
+  @apply text-teal-700 text-[20px] xl:text-[24px] font-bold px-2 xl:px-48;
+}
+#promo-container > div {
+  @apply mt-12 h-max pb-16;
+  /* height: 15vh; */
+}
+#promo-container > div > a:nth-of-type(1) {
+  @apply mr-6 bg-teal-700;
+}
+#promo-container > div > a:nth-of-type(2) {
+  @apply mr-6 bg-red-500;
+}
+#promo-container > div > a {
+  @apply text-white sm:text-[16px] lg:text-[18px] rounded-md font-bold mt-16 lg:mt-20 xl:mt-24 uppercase py-4 px-8 lg:py-4 lg:px-9 hover:bg-white hover:text-black;
+}
+
+/*
+  ========================================
+  Movie Cards Styles
+  ========================================
+*/
+
+#movie-cards-container {
+  @apply w-screen  flex flex-wrap p-6;
+  /* p-3 lg:px-12 sm:justify-between */
+}
+
+#movie-cards-container > main {
+  @apply w-5/12 lg:w-3/12 xl:w-2/12 h-96  mt-10 mr-3 ml-5 text-center p-0 m-0;
+  overflow: hidden;
+}
+#movie-cards-container > main > div {
+  @apply h-72 mt-0 text-center mb-3 bg-cover bg-no-repeat bg-center relative rounded-lg;
+}
+
+#movie-card-overlay {
+  @apply absolute bg-orange-400 opacity-0 origin-bottom-left flex flex-col justify-center w-full h-full rounded-lg;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+}
+/* Animation Style */
+#movie-card-image:hover #movie-card-overlay {
+  @apply opacity-100;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  /* opacity: 1; */
+}
+
+#movie-cards-container > main:nth-of-type(1) > div {
+  background-image: url("../img/movies/movie-one.jpg");
+}
+
+#movie-cards-container > main:nth-of-type(2) > div {
+  background-image: url("../img/movies/movie-two.jpg");
+}
+#movie-cards-container > main:nth-of-type(3) > div {
+  background-image: url("../img/movies/movie-three.jpg");
+}
+#movie-cards-container > main:nth-of-type(4) > div {
+  background-image: url("../img/movies/movie-four.jpg");
+}
+/*
+  ========================================
+  Blog Page Styles
+  ========================================
+*/
+#post-content > p {
+  @apply my-3 text-gray-500;
+}
+
+#post-content h3 {
+  @apply mt-6 font-bold text-lg;
+}
+
+#post-content-list li {
+  @apply leading-6 text-gray-500;
+}
+
+#tags button {
+  @apply px-5 py-1 border-solid border-amber-300 border-2 rounded-3xl font-bold text-[12px] hover:bg-orange-400 hover:text-white;
+}
+
+#socials span {
+  @apply w-6 h-6 bg-black inline-block mr-1 last:mr-0;
+}
+
+/* 
+    ==============================
+    Open Sans
+    ==============================
+*/
+/* open-sans-regular - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/open-sans/open-sans-v27-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/open-sans/open-sans-v27-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/open-sans/open-sans-v27-latin-regular.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+/* open-sans-600 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/open-sans/open-sans-v27-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/open-sans/open-sans-v27-latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-600.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/open-sans/open-sans-v27-latin-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/open-sans/open-sans-v27-latin-600.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+/* open-sans-800 - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: normal;
+  font-weight: 800;
+  src: url("../fonts/open-sans/open-sans-v27-latin-800.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-800.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/open-sans/open-sans-v27-latin-800.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-800.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/open-sans/open-sans-v27-latin-800.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/open-sans/open-sans-v27-latin-800.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+/* open-sans-500italic - latin */
+@font-face {
+  font-family: "Open Sans";
+  font-style: italic;
+  font-weight: 500;
+  src: url("../fonts/open-sans/open-sans-v27-latin-500italic.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/open-sans/open-sans-v27-latin-500italic.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/open-sans/open-sans-v27-latin-500italic.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-500italic.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/open-sans/open-sans-v27-latin-500italic.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/open-sans/open-sans-v27-latin-500italic.svg#OpenSans")
+      format("svg"); /* Legacy iOS */
+}
+
+/* 
+    ==============================
+    Spicy Rice
+    ==============================
+*/
+/* spicy-rice-regular - latin */
+@font-face {
+  font-family: "Spicy Rice";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/spicy-rice/spicy-rice-v11-latin-regular.svg#SpicyRice")
+      format("svg"); /* Legacy iOS */
+}
+
+/* dancing-script-regular - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-regular.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-500 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 500;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-500.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-500.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-500.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-700 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-700.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-700.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-700.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+/* dancing-script-600 - latin */
+@font-face {
+  font-family: "Dancing Script";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/Dancing-Script/dancing-script-v19-latin-600.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/Dancing-Script/dancing-script-v19-latin-600.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/Dancing-Script/dancing-script-v19-latin-600.svg#DancingScript")
+      format("svg"); /* Legacy iOS */
+}
+
+#menu-primary-menu {
+  background-color: red !important;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 75%;
+  margin-right: 3%;
+}
+
+/* 
+  ========================================
+  Comments Area
+  ========================================
+*/
+#comments {
+  /* background-color: red; */
+  padding: 3% 2%;
+  border-top: 1px solid black;
+}
+
+.comment-meta {
+  /* background-color: green; */
+  /* display: flex; */
+}
+/* Space Between Each Comment */
+.comment-body {
+  margin-top: 3%;
+}
+.comment-author {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.comment-author img {
+  margin-right: 1%;
+}
+.fn,
+.url {
+  /* background-color: darkmagenta; */
+  width: fit-content;
+}
+.says {
+  display: none !important;
+}
+ol {
+  list-style: none;
+}
+.comment-content {
+  padding-bottom: 2%;
+}
+.comment-reply-link {
+  margin-top: 5% !important;
+}
+.comment-reply-link {
+  border: 1px solid black;
+  padding: 0.5% 2%;
+  /* margin-top: 5% !important; */
+}
+.comment-form-comment label {
+  display: none;
+}
+
+#comment {
+  margin: 1.5% 2%;
+  padding: 2% 3%;
+  border: 1px solid black;
+  border-radius: 30px;
+  width: 80%;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+
+#submit {
+  margin: 1.5% 2%;
+  border: 1px solid black;
+  padding: 0.5% 2%;
+}

@@ -1,15 +1,26 @@
-<?php if (!defined('ABSPATH')) { exit; }
+<?php
 
 get_header();
 
-if(have_posts()) {
-  while(have_posts()){
-    the_post()?>
-    <h1><a href="<?php the_permalink()?>"><?php the_title()?></a></h1>
-    <?php the_content()?>
-    <?php
-  }
-}
+if ( have_posts() ) {
 
-get_footer();
+	// Load posts loop.
+	while ( have_posts() ) {
+		the_post();
+
+        // Get the content display template
+        get_template_part( 'template-parts/content/content');
+    }
+    // posts_nav_link();
+
+	// Previous/next page navigation.
+	// twenty_twenty_one_the_posts_navigation();
+
+} else {
+
+    // if no posts exist for page , show empty template
+    get_template_part( 'template-parts/content/content','empty'); 
+
+
+} get_footer(); 
 ?>

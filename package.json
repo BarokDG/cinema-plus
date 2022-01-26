@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "npx postcss ./tailwind.css -o assets/css/tailwind.prod.css --watch"
+    "watch": "npx postcss assets/css/tailwind.css -o assets/css/tailwind.prod.css --watch"
   },
   "repository": {
     "type": "git",
