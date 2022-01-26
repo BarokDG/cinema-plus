@@ -11,8 +11,8 @@
           <p class="font-serif text-sm text-black font-normal uppercase mt-10">
               The page you are looking for might have been removed, had its name change or is temporarily unavailable 
           </p>
-          <a href="#" class="w-1/3 font-serif text-xs font-normal uppercase text-white bg-orange-600 inline-block py-4 px-9 border-solid border-2 rounded-3xl hover:bg-white hover:text-orange-600" >Home</a>
-          <a href="#" class="w-1/3 font-serif text-xs font-normal uppercase text-white bg-orange-600 inline-block py-4 px-9 border-solid border-2 rounded-3xl hover:bg-white hover:text-orange-600" >Blog</a>
+          <a href="<?php echo get_home_url( )?>" class="w-1/3 font-serif text-xs font-normal uppercase text-white bg-orange-600 inline-block py-4 px-9 border-solid border-2 rounded-3xl hover:bg-white hover:text-orange-600" >Home</a>
+          <a href="<?php echo get_post_type_archive_link( 'post' )?>" class="w-1/3 font-serif text-xs font-normal uppercase text-white bg-orange-600 inline-block py-4 px-9 border-solid border-2 rounded-3xl hover:bg-white hover:text-orange-600" >Blog</a>
           
       </div>  
     </div>
