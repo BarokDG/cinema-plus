@@ -79,8 +79,6 @@ function cinema_plus_contact_email_callback( $post ) {
 	wp_nonce_field( 'cinema_save_contact_email_data', 'cinema_plus_contact_email_meta_box_nonce' );
 	
 	$value = get_post_meta( $post->ID, '_contact_email_value_key', true );
-
-	echo "A" . $value;
 	
 	echo '<label for="cinema_plus_contact_email_field">User Email Address: </label>';
 	echo '<input type="email" id="cinema_plus_contact_email_field" name="cinema_plus_contact_email_field" value="' . esc_attr( $value ) . '" size="25" />';

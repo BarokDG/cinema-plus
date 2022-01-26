@@ -1,9 +1,9 @@
 <?php
 get_header();
 
-get_template_part( "/template-parts/header/site","branding") ;
 
-if(is_front_page(  )){?>
+
+/*if(is_front_page(  )){?>
 <!-- Landing Page -->
 <div id="landing-page-container">
     <h1>Watching Movies -</h1>
@@ -28,14 +28,26 @@ if(is_front_page(  )){?>
     </div>
 </div>
 <?php }
-else{
+else{*/
+    ?>
+<div id='main-content-container'>
+    <?php
     if(have_posts(  )){
         while(have_posts(  )){
             the_post(  );
             the_content( );
         }
     }
+    ?>
+</div>
+<style>
+#main-content-container {
+    padding-top: 3%;
 }
+</style>
+
+<?php
+/*}*/
 
 
 get_footer( );

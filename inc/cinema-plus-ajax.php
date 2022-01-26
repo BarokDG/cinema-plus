@@ -6,11 +6,11 @@ function cp_save_contact(){
 
 	$title = wp_strip_all_tags($_POST["name"]);
 	$email = wp_strip_all_tags($_POST["email"]);
-	// $message = wp_strip_all_tags($_POST["message"]);
+	$message = wp_strip_all_tags($_POST["message"]);
 
 	$post_argument = array(
         'post_title' => $title,
-        'post_content' => "Burhhhhh",
+        'post_content' => $message,
         'post_author' => 1,
         'post_status' => 'publish',
         'post_type' => 'cp-contact',

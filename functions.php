@@ -129,7 +129,7 @@ require_once (get_template_directory(  ) .'/inc/cinema-plus-short-code.php');
 
 
 // Ajax
-require_once (get_template_directory(  ) .'/inc/ajax.php');
+require_once (get_template_directory(  ) .'/inc/cinema-plus-ajax.php');
 
 
 

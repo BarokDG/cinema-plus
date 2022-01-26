@@ -36,7 +36,6 @@ function cp_activate_contact() {
     $options = get_option( 'activate_status' );
     $checked = ($options == 1? 'checked':"");
 	echo ' <input type="checkbox" name="activate_status" id="" value="1" '.$checked.'>';
-	echo $checked;
 }
 
 
