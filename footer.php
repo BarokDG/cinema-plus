@@ -1,7 +1,7 @@
 <?php if (!defined('ABSPATH')) { exit; }?>
 
 <!-- Footer Design Section -->
-<footer class="font-sans bg-slate-500">
+<footer class="font-sans">
     <div id="sub-bar" class="sm:mx-40 xl:mx-72 relative top-20">
         <div class="flex flex-col xl:flex-row justify-around bg-primary rounded-[10px] py-10 md:px-10 md:py-5">
             <div class="text-center md:text-left">
