@@ -226,3 +226,45 @@ function cp_register_my_menus() {
 
 add_action( 'wp_head',"cp_customize_header_css");
 ?>
+
+<?php 
+
+  /*
+      =========================================
+      Footer Registration
+      ========================================= 
+  */
+
+  function nd_dosth_register_sidebars() {
+	
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section One', 'nd_dosth' ),
+     'id'            => 'footer-section-one',
+     'description'   => esc_html__( 'Widgets added here would appear inside the first section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section Two', 'nd_dosth' ),
+     'id'            => 'footer-section-two',
+     'description'   => esc_html__( 'Widgets added here would appear inside the second section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section Three', 'nd_dosth' ),
+     'id'            => 'footer-section-three',
+     'description'   => esc_html__( 'Widgets added here would appear inside the third section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
+ }
+ add_action( 'widgets_init', 'nd_dosth_register_sidebars' );
+
+?>
