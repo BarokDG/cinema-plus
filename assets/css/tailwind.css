@@ -232,6 +232,34 @@ body {
   @apply w-6 h-6 bg-black inline-block mr-1 last:mr-0;
 }
 
+
+
+/* 
+
+  ========================
+  Footer Styles
+  ========================
+
+*/
+
+#subscribe-bar-container {
+  @apply sm:mx-40 xl:mx-72 relative top-20;
+}
+
+#subscribe-bar {
+  @apply flex flex-col xl:flex-row justify-around bg-primary rounded-[10px] py-10 md:px-10 md:py-5;
+}
+
+/* #subscribe-bar-✉ {
+  @apply rounded-[10px] font-4xl text-tertiary w-4/5 self-center p-5 my-4 mx-8 xl:relative xl:left-10 z-0;
+} */
+
+/* #subscribe-bar-btn {
+  @apply bg-secondary text-white uppercase text-xl font-bold w-fit self-center px-16 py-4 rounded-[10px] z-1;
+} */
+
+
+
 /* 
     ==============================
     Open Sans
