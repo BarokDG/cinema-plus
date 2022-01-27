@@ -14,8 +14,9 @@ function cp_save_contact(){
         $email = wp_strip_all_tags($_POST["email"]);
         $message = wp_strip_all_tags($_POST["message"]);
     
-        if (!is_email($email) || !isset($title) || !isset($email))
+        if (!is_email($email) || !isset($title) || !isset($email)) {
             exit;
+        }
 
         $post_argument = array(
             'post_title' => $title,
