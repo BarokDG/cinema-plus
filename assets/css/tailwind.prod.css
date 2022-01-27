@@ -2078,6 +2078,10 @@ ol {
   padding: 0.5% 2%;
 }
 
+#main-content-container {
+  padding-top: 100px!important;
+}
+
 .hover\:cursor-pointer:hover {
   cursor: pointer;
 }
