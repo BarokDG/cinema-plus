@@ -6,6 +6,9 @@ module.exports = {
         spice: "Spicy Rice",
         sans: "Open Sans",
       },
+      gridTemplateColumns: {
+        single: "1fr 200px",
+      },
     },
   },
   plugins: [],

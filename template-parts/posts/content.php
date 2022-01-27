@@ -4,13 +4,16 @@ get_template_part("/template-parts/posts/parts/posts-header");
 
 ?>
 
-<article class="pt-3 px-48 pb-8">
-    <?php get_template_part("/template-parts/posts/parts/posts-content");?>
-</article>
-
-<h1>
+<div id="grid-container" class="grid">
+	<article class="pt-3 px-48 pb-8">
+		<?php get_template_part("/template-parts/posts/parts/posts-content");?>
 		<?php get_template_part("/template-parts/posts/parts/posts-author");?>
-</h1>
+	</article>
+	
+	<aside>
+		<?php get_template_part("content-aside"); ?>
+	</aside>
+</div>
 
 
 <?php
