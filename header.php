@@ -33,7 +33,7 @@
 
         </div>
 
-        <a id="search-icon" class="hover:text-primary hover:cursor-pointer">
+        <a id="search-icon" class="hover:text-primary hover:cursor-pointer" href=<?= esc_url(site_url('/search')) ?>>
             <svg class="svg-icon search-icon h-6 w-6" aria-labelledby="title desc" role="img"
                 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7">
                 <title id="title">Search Icon</title>
@@ -84,14 +84,11 @@
 
     <?php
     if(get_theme_mod("header_values_sticky_setting") == "Yes"){?>
-    document.querySelector("#header-container").classList.add("sticky");
+        document.querySelector("#header-container").classList.add("sticky");
     <?php }
     else{?>
-    document.querySelector("#header-container").classList.remove("sticky");
+        document.querySelector("#header-container").classList.remove("sticky");
     <?php } ?>
-
-
-
 
 
     window.onscroll = function() {
