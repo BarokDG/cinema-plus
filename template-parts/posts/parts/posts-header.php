@@ -12,7 +12,6 @@
 <?php
 if(get_the_post_thumbnail_url()){ ?>
 
-
 <section id="post-content-header">
     <p id="post-date" class="text-gray-400 text-sm font-bold mt-2 mb-4">
         <?php echo get_the_date( ); ?>

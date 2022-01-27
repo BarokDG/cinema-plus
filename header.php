@@ -7,13 +7,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="<?php bloginfo( 'charset' ); ?>" />
 
-
-
     <!-- Load WP objects for head-tag -->
     <?php wp_head(); ?>
 
 
 </head>
+
 
 <body id='body'>
     <nav id='header-container' class="flex flex-row justify-around md:justify-evenly items-center mb-5 text-white">
