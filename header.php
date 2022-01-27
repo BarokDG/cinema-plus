@@ -6,8 +6,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="<?php bloginfo( 'charset' ); ?>" />
 
-
-
     <!-- Load WP objects for head-tag -->
     <?php wp_head(); ?>
 
@@ -17,10 +15,10 @@
 <body>
     <header id="header-container">
         <?php
-            wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
+            // wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
         ?>
     </header>
-    <nav class="flex flex-row justify-around md:justify-evenly items-center mb-5 text-white bg-slate-500">
+    <nav class="flex flex-row justify-around md:justify-evenly items-center mb-5 md:mb-0 text-white bg-slate-500">
         <div id="nav-logo" class="hover:cursor-pointer">
 
 

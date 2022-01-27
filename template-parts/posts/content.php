@@ -8,6 +8,9 @@ get_template_part("/template-parts/posts/parts/posts-header");
     <?php get_template_part("/template-parts/posts/parts/posts-content");?>
 </article>
 
+<h1>
+		<?php get_template_part("/template-parts/posts/parts/posts-author");?>
+</h1>
 
 
 <?php

@@ -30,6 +30,9 @@
         </a>
     </h1>
 
+    <!-- The Author -->
+    <?php the_author( );?>
+
     <!-- The Date -->
     <span><?php the_date() ?></span>
 
