@@ -68,6 +68,6 @@
 
 <style>
 article {
-    margin-top: 5%;
+    padding-top: 8%;
 }
 </style>

@@ -13,7 +13,7 @@
     
 
     // If Comments Exist but is not open
-        if(!comments_open( ) && get_comments_number(  )){
+        if(!comments_open( ) ){
             get_template_part("/template-parts/comments/comment",'closed');
         } 
 

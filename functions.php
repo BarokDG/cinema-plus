@@ -1,61 +1,4 @@
 <?php
-
-/*
-    =========================================
-    Register Theme Support
-    =========================================
-*/
-function cp_register_basic_supports(){
-    add_theme_support('title-tag');
-    
-    // Support for Post Thumbnails/Featured Image : size of image will be decided at render time
-    add_theme_support( 'post-thumbnails' );
-
-    // Support for Different post formats
-	add_theme_support(
-			'post-formats',
-			array(
-				'aside',
-			)
-		);
-
-    // Activate HTML5 Features
-   add_theme_support(
-			'html5',
-			array(
-				'comment-form',
-				'comment-list',
-				'gallery',
-				'caption',
-				'style',
-				'script',
-				'navigation-widgets',
-			)
-		);
-
-    // Support for custom logo
-    add_theme_support(
-			'custom-logo',
-			array(
-				'height'               => 100,
-				'width'                => 300,
-				'flex-width'           => true,
-				'flex-height'          => true,
-				'unlink-homepage-logo' => false,
-			)
-		); 
-    
-    add_theme_support( 'custom-header' );
-
-}
-
-function cp_register_all_custom_support(){
-    cp_register_basic_supports();
-}
-
-
-add_action( 'after_setup_theme', 'cp_register_all_custom_support' );
-
 /*
     =========================================
     Register Styles
@@ -71,6 +14,9 @@ function cp_register_style($style_name,$file_name,$dependencies=array(),$version
 function cp_register_all_styles(){
     // /assets/css/
     cp_register_style('tailwind-css','tailwind.prod.css');
+    wp_deregister_script( 'jquery' );
+     cp_register_script('cp-jquery',"jquery.js");
+     cp_register_script('cp-main-js',"cinema-plus.js",array('cp-jquery'));
     
     // Enqueue Each Style -> dependencies, version & screen type are optional parameters as they have default values
     cp_register_style('ADD LOCAL STYLE NAME HERE','ADD FILENAME HERE',"ADD DEPENDENCIES HERE","ADD VERSION HERE","ADD SCREEN TYPE HERE");
@@ -88,24 +34,19 @@ add_action( 'wp_enqueue_scripts', "cp_register_all_styles" );
 
 // Function to register one script
 function cp_register_script($script_name,$file_name,$dependencies=array(),$version='1.0',$isDeferred=true){
-    wp_enqueue_script($script_name,$file_name,$dependencies,$version,$isDeferred);
+    wp_enqueue_script($script_name,get_template_directory_uri(  ) . '/assets/js/' .$file_name,$dependencies,$version,$isDeferred);
 }
 
-// Function to register all scripts
-function cp_register_all_scripts(){
+// Function to register customizer scripts
+function cp_register_customize_scripts(){
+    cp_register_script('customize-controls-js',"dynamic-customizer-controls.js");
 
       // Enqueue Each Script -> dependencies,version & isDeferred are optional parameters as they have default values
       cp_register_script("ADD SCRIPT NAME HERE","ADD FILE NAME HERE","ADD DEPENDENCIES HERE","ADD VERSION HERE","ADD isDeferred HERE");
 
 }
-
-/*
-    =========================================
-    Create Cinema Plus Customizer Class
-    ========================================= 
-*/
-require get_stylesheet_directory(  ) . "/inc/cinema-plus-customizer.php";
-new CinemaPlusCustomizer();
+// Hook the function that enqueues all scripts
+add_action( 'customize_controls_enqueue_scripts', "cp_register_customize_scripts" );
 
 
 
@@ -114,32 +55,34 @@ new CinemaPlusCustomizer();
     CSS Customizer Registration
     ========================================= 
 */
-function cp_customize_css(){ ?>
+
+/*
+function cp_customize_global_css(){ ?>
 
 <style>
 body {
-    background-color: <?php echo get_theme_mod("global-site-background-color-setting")?>
+    background-color: <?php echo get_theme_mod("global-site-background-color-setting", 'yellow')?>
 }
 
 h1 {
-    color: <?php echo get_theme_mod("global-heading-one-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-one-color-setting", 'yellow') ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting", 'Dancing Script')?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "54px") ?>;
 }
 
 h2 {
-    color: <?php echo get_theme_mod("global-heading-two-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-two-color-setting", "yellow") ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting", "Lato")?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "42px") ?>;
 }
 
 h3,
 h4,
 h5,
 h6 {
-    color: <?php echo get_theme_mod("global-heading-three-color-setting") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
+    color: <?php echo get_theme_mod("global-heading-three-color-setting", "yellow") ?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting", "Lato")?> !important;
+    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "32px") ?>;
 }
 
 p,
@@ -150,33 +93,96 @@ article {
     font-family: <?php echo get_theme_mod("global-heading-text-font-family-setting")?> !important;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
-
-a {
-    color: <?php echo get_theme_mod("global-heading-text-color-setting") ?>;
-    font-family: <?php echo get_theme_mod("global-heading-link-font-family-setting")?> !important;
-    font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
-}
 </style>
 
 <?php 
 }
 
-add_action( 'wp_head',"cp_customize_css");
+add_action( 'wp_head',"cp_customize_global_css");
+
+*/
+
 
 /*
     =========================================
-    Menu Registration
+    Include Files
     ========================================= 
 */
 
-function cp_register_my_menus() {
-  register_nav_menus(
-    array(
-      'main-menu' => __( 'Main Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
-     )
-   );
+// Admin
+require_once (get_template_directory(  ) .'/inc/cinema-plus-admin.php');
+
+// CSS
+require_once (get_template_directory(  ) .'/inc/cinema-plus-css.php');
+
+// Customizer
+require_once (get_template_directory(  ) . "/inc/cinema-plus-customizer.php");
+
+// Theme Support
+require_once (get_template_directory(  ) .'/inc/cinema-plus-theme-support.php');
+
+// Custom Post Type
+require_once (get_template_directory(  ) .'/inc/cinema-plus-custom-post-type.php');
+
+// Custom Post Type
+require_once (get_template_directory(  ) .'/inc/cinema-plus-short-code.php');
+
+
+// Ajax
+require_once (get_template_directory(  ) .'/inc/cinema-plus-ajax.php');
+
+
+
+/*
+    =========================================
+    Create Cinema Plus Customizer Class
+    ========================================= 
+*/
+
+new CinemaPlusCustomizer();
+
+
+add_action( 'wp_head',"cp_customize_header_css");
+?>
+
+<?php 
+
+  /*
+      =========================================
+      Footer Registration
+      ========================================= 
+  */
+
+  function nd_dosth_register_sidebars() {
+	
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section One', 'nd_dosth' ),
+     'id'            => 'footer-section-one',
+     'description'   => esc_html__( 'Widgets added here would appear inside the first section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section Two', 'nd_dosth' ),
+     'id'            => 'footer-section-two',
+     'description'   => esc_html__( 'Widgets added here would appear inside the second section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
+    register_sidebar( array(
+     'name'          => esc_html__( 'Footer Section Three', 'nd_dosth' ),
+     'id'            => 'footer-section-three',
+     'description'   => esc_html__( 'Widgets added here would appear inside the third section of the footer', 'nd_dosth' ),
+     'before_widget' => '<div>',
+     'after_widget'  => '</div>',
+     'before_title'  => '',
+     'after_title'   => '',
+     ) );
  }
- add_action( 'init', 'cp_register_my_menus' );
+ add_action( 'widgets_init', 'nd_dosth_register_sidebars' );
 
 ?>
