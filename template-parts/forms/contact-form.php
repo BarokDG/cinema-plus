@@ -101,6 +101,7 @@ input {
                 <p>Something went wrong. Try again!</p>
             </div>
         </div>
+        <?php wp_nonce_field( 'post_message_to_admin', 'cp_contact_form' ); ?>
     </form>
 </div>
 

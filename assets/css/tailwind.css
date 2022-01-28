@@ -540,6 +540,9 @@ ol {
   padding: 0.5% 2%;
 }
 
+#main-content-container {
+  padding-top: 100px!important;
+
 .nav-links {
   @apply flex items-center justify-between w-full px-[15%];
 }
@@ -554,4 +557,5 @@ ol {
 
 #content-aside {
   @apply min-h-[50vh] h-fit;
+
 }

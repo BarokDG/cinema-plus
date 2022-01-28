@@ -203,4 +203,22 @@ add_action( 'wp_head',"cp_customize_header_css");
  }
  add_action( 'widgets_init', 'nd_dosth_register_sidebars' );
 
+/* 
+
+    ===========================
+    Blog Comment Sanitization
+    ===========================
+
+*/ 
+
+require_once ( get_template_directory() . '/inc/cinema-plus-sanitizer.php');
+
+function custom_change_comment_url( $commentdata ) {
+  $cinemaPlusSanitizer = new CinemaPlusSanitizer();
+  $commentContent = $cinemaPlusSanitizer->sanitize_entry($commentdata['comment_content']);
+  $commentdata['comment_content'] = $commentContent;
+  return $commentdata;
+}
+
+add_filter('preprocess_comment', 'custom_change_comment_url');
 ?>
