@@ -44,7 +44,7 @@
             <p>Category : <?php
                 if ( get_the_category()) {
                     foreach( get_the_category() as $category) {
-                        echo $category->name . ' '; 
+                        echo "<a href=" . esc_url(get_category_link($category->term_id)) . ">$category->name</a>";
                     }
                 }
             ?></p>
