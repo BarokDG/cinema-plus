@@ -56,23 +56,23 @@ add_action( 'customize_controls_enqueue_scripts', "cp_register_customize_scripts
     ========================================= 
 */
 
-/*
+
 function cp_customize_global_css(){ ?>
 
 <style>
 body {
-    background-color: <?php echo get_theme_mod("global-site-background-color-setting", 'yellow')?>
+    background-color: <?php echo get_theme_mod("global-site-background-color-setting", '#ffffff')?>
 }
 
 h1 {
-    color: <?php echo get_theme_mod("global-heading-one-color-setting", 'yellow') ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting", 'Dancing Script')?> !important;
+    color: <?php echo get_theme_mod("global-heading-one-color-setting", 'yellow') ?>;
+    font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting", 'Dancing Script')?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "54px") ?>;
 }
 
 h2 {
-    color: <?php echo get_theme_mod("global-heading-two-color-setting", "yellow") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting", "Lato")?> !important;
+    color: <?php echo get_theme_mod("global-heading-two-color-setting", "yellow") ?>;
+    font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting", "Dancing Script")?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "42px") ?>;
 }
 
@@ -80,8 +80,8 @@ h3,
 h4,
 h5,
 h6 {
-    color: <?php echo get_theme_mod("global-heading-three-color-setting", "yellow") ?> !important;
-    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting", "Lato")?> !important;
+    color: <?php echo get_theme_mod("global-heading-three-color-setting", "yellow") ?>;
+    font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting", "Dancing Script")?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "32px") ?>;
 }
 
@@ -90,7 +90,7 @@ span,
 section,
 article {
     color: <?php echo get_theme_mod("global-heading-text-color-setting") ?>;
-    font-family: <?php echo get_theme_mod("global-heading-text-font-family-setting")?> !important;
+    font-family: <?php echo get_theme_mod("global-heading-text-font-family-setting")?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting") ?>;
 }
 </style>
@@ -100,7 +100,6 @@ article {
 
 add_action( 'wp_head',"cp_customize_global_css");
 
-*/
 
 
 /*
@@ -164,6 +163,7 @@ add_action( 'wp_head',"cp_customize_header_css");
      'before_title'  => '',
      'after_title'   => '',
      ) );
+     
     register_sidebar( array(
      'name'          => esc_html__( 'Footer Section Two', 'nd_dosth' ),
      'id'            => 'footer-section-two',
@@ -173,6 +173,7 @@ add_action( 'wp_head',"cp_customize_header_css");
      'before_title'  => '',
      'after_title'   => '',
      ) );
+     
     register_sidebar( array(
      'name'          => esc_html__( 'Footer Section Three', 'nd_dosth' ),
      'id'            => 'footer-section-three',
@@ -182,6 +183,7 @@ add_action( 'wp_head',"cp_customize_header_css");
      'before_title'  => '',
      'after_title'   => '',
      ) );
+     
      register_sidebar( array(
         'name'          => esc_html__( 'Blog Sidebar', 'nd_dosth' ),
         'id'            => 'blog-sidebar',
@@ -191,18 +193,20 @@ add_action( 'wp_head',"cp_customize_header_css");
         'before_title'  => '',
         'after_title'   => '',
         ) );
-        register_sidebar( array(
-            'name'          => esc_html__( 'Social Footer', 'nd_dosth' ),
-            'id'            => 'social-footer',
-            'description'   => esc_html__( 'Widgets added here would appear inside the social footer', 'nd_dosth' ),
-            'before_widget' => '<div>',
-            'after_widget'  => '</div>',
-            'before_title'  => '',
-            'after_title'   => '',
-            ) );
+        
+    register_sidebar( array(
+        'name'          => esc_html__( 'Social Footer', 'nd_dosth' ),
+        'id'            => 'social-footer',
+        'description'   => esc_html__( 'Widgets added here would appear inside the social footer', 'nd_dosth' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
  }
  add_action( 'widgets_init', 'nd_dosth_register_sidebars' );
 
+ 
 /* 
 
     ===========================

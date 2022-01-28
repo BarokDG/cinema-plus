@@ -232,8 +232,6 @@ body {
   @apply w-6 h-6 bg-black inline-block mr-1 last:mr-0;
 }
 
-
-
 /* 
 
   ========================
@@ -257,8 +255,6 @@ body {
 /* #subscribe-bar-btn {
   @apply bg-secondary text-white uppercase text-xl font-bold w-fit self-center px-16 py-4 rounded-[10px] z-1;
 } */
-
-
 
 /* 
     ==============================
@@ -650,17 +646,17 @@ body {
   font-weight: 800;
   src: url("../fonts/poppins/poppins-v15-latin-800italic.eot"); /* IE9 Compat Modes */
   src: local(""),
-  url("../fonts/poppins/poppins-v15-latin-800italic.eot?#iefix")
-  format("embedded-opentype"),
-/* IE6-IE8 */ url("../fonts/poppins/poppins-v15-latin-800italic.woff2")
-  format("woff2"),
-/* Super Modern Browsers */
-  url("../fonts/poppins/poppins-v15-latin-800italic.woff") format("woff"),
-/* Modern Browsers */
-  url("../fonts/poppins/poppins-v15-latin-800italic.ttf") format("truetype"),
-/* Safari, Android, iOS */
-  url("../fonts/poppins/poppins-v15-latin-800italic.svg#Poppins")
-  format("svg"); /* Legacy iOS */
+    url("../fonts/poppins/poppins-v15-latin-800italic.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/poppins/poppins-v15-latin-800italic.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/poppins/poppins-v15-latin-800italic.woff") format("woff"),
+    /* Modern Browsers */
+      url("../fonts/poppins/poppins-v15-latin-800italic.ttf") format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/poppins/poppins-v15-latin-800italic.svg#Poppins")
+      format("svg"); /* Legacy iOS */
 }
 /* poppins-900 - latin */
 @font-face {
@@ -754,8 +750,8 @@ body {
       format("woff"),
     /* Modern Browsers */ url("../fonts/lato/lato-v20-latin-italic.ttf")
       format("truetype"),
-/* Safari, Android, iOS */
-url("../fonts/lato/lato-v20-latin-italic.svg#Lato") format("svg"); /* Legacy iOS */
+    /* Safari, Android, iOS */
+      url("../fonts/lato/lato-v20-latin-italic.svg#Lato") format("svg"); /* Legacy iOS */
 }
 /* lato-700 - latin */
 @font-face {
@@ -931,32 +927,32 @@ url("../fonts/lato/lato-v20-latin-italic.svg#Lato") format("svg"); /* Legacy iOS
   src: local(""),
     url("../fonts/roboto/roboto-v29-latin-900.eot?#iefix")
       format("embedded-opentype"),
-/* IE6-IE8 */ url("../fonts/roboto/roboto-v29-latin-900.woff2")
-format("woff2"),
-/* Super Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900.woff")
-  format("woff"),
-/* Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900.ttf")
-  format("truetype"),
-/* Safari, Android, iOS */
-  url("../fonts/roboto/roboto-v29-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
+    /* IE6-IE8 */ url("../fonts/roboto/roboto-v29-latin-900.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900.woff")
+      format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/roboto/roboto-v29-latin-900.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 /* roboto-900italic - latin */
 @font-face {
-font-family: "Roboto";
-font-style: italic;
-font-weight: 900;
-src: url("../fonts/roboto/roboto-v29-latin-900italic.eot"); /* IE9 Compat Modes */
-src: local(""),
-url("../fonts/roboto/roboto-v29-latin-900italic.eot?#iefix")
-  format("embedded-opentype"),
-/* IE6-IE8 */ url("../fonts/roboto/roboto-v29-latin-900italic.woff2")
-  format("woff2"),
-/* Super Modern Browsers */
-  url("../fonts/roboto/roboto-v29-latin-900italic.woff") format("woff"),
-/* Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900italic.ttf")
-  format("truetype"),
-/* Safari, Android, iOS */
-  url("../fonts/roboto/roboto-v29-latin-900italic.svg#Roboto") format("svg"); /* Legacy iOS */
+  font-family: "Roboto";
+  font-style: italic;
+  font-weight: 900;
+  src: url("../fonts/roboto/roboto-v29-latin-900italic.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/roboto/roboto-v29-latin-900italic.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/roboto/roboto-v29-latin-900italic.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/roboto/roboto-v29-latin-900italic.woff") format("woff"),
+    /* Modern Browsers */ url("../fonts/roboto/roboto-v29-latin-900italic.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/roboto/roboto-v29-latin-900italic.svg#Roboto") format("svg"); /* Legacy iOS */
 }
 
 /* 
@@ -966,25 +962,25 @@ Architects Daughter
 */
 /* architects-daughter-regular - latin */
 @font-face {
-font-family: "Architects Daughter";
-font-style: normal;
-font-weight: 400;
-src: url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.eot"); /* IE9 Compat Modes */
-src: local(""),
-url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.eot?#iefix")
-  format("embedded-opentype"),
-/* IE6-IE8 */
-  url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.woff2")
-  format("woff2"),
-/* Super Modern Browsers */
-  url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.woff")
-  format("woff"),
-/* Modern Browsers */
-  url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.ttf")
-  format("truetype"),
-/* Safari, Android, iOS */
-  url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.svg#ArchitectsDaughter")
-  format("svg"); /* Legacy iOS */
+  font-family: "Architects Daughter";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/architects-daughter/architects-daughter-v11-latin-regular.svg#ArchitectsDaughter")
+      format("svg"); /* Legacy iOS */
 }
 
 /* 
@@ -994,23 +990,23 @@ Indie Flower
 */
 /* indie-flower-regular - latin */
 @font-face {
-font-family: "Indie Flower";
-font-style: normal;
-font-weight: 400;
-src: url("../fonts/indie/indie-flower-v12-latin-regular.eot"); /* IE9 Compat Modes */
-src: local(""),
-url("../fonts/indie/indie-flower-v12-latin-regular.eot?#iefix")
-  format("embedded-opentype"),
-/* IE6-IE8 */ url("../fonts/indie/indie-flower-v12-latin-regular.woff2")
-  format("woff2"),
-/* Super Modern Browsers */
-  url("../fonts/indie/indie-flower-v12-latin-regular.woff") format("woff"),
-/* Modern Browsers */
-  url("../fonts/indie/indie-flower-v12-latin-regular.ttf")
-  format("truetype"),
-/* Safari, Android, iOS */
-  url("../fonts/indie/indie-flower-v12-latin-regular.svg#IndieFlower")
-  format("svg"); /* Legacy iOS */
+  font-family: "Indie Flower";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/indie/indie-flower-v12-latin-regular.eot"); /* IE9 Compat Modes */
+  src: local(""),
+    url("../fonts/indie/indie-flower-v12-latin-regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("../fonts/indie/indie-flower-v12-latin-regular.woff2")
+      format("woff2"),
+    /* Super Modern Browsers */
+      url("../fonts/indie/indie-flower-v12-latin-regular.woff") format("woff"),
+    /* Modern Browsers */
+      url("../fonts/indie/indie-flower-v12-latin-regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../fonts/indie/indie-flower-v12-latin-regular.svg#IndieFlower")
+      format("svg"); /* Legacy iOS */
 }
 /* 
     ==============================
@@ -1089,8 +1085,6 @@ url("../fonts/indie/indie-flower-v12-latin-regular.eot?#iefix")
     /* Safari, Android, iOS */
       url("../fonts/caveat/caveat-v10-latin-700.svg#Caveat") format("svg"); /* Legacy iOS */
 }
-
-
 
 #menu-primary-menu {
   background-color: red !important;
@@ -1172,7 +1166,8 @@ ol {
 }
 
 #main-content-container {
-  padding-top: 100px!important;
+  padding-top: 100px !important;
+}
 
 .nav-links {
   @apply flex items-center justify-between w-full px-[15%];
@@ -1188,5 +1183,4 @@ ol {
 
 #content-aside {
   @apply min-h-[50vh] h-fit;
-
 }
