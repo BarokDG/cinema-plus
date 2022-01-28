@@ -223,7 +223,18 @@ class CinemaPlusCustomizer{
                 'settings' => 'header_values_font_family_setting',
                  'type' => 'select',
                  'priority' => 1,
-                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+                 'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
 
