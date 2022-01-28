@@ -44,8 +44,6 @@ function cp_register_basic_supports(){
 				'unlink-homepage-logo' => false,
 			)
 		); 
-    
-    add_theme_support( 'custom-header' );
 
     // Add support for custom line height controls.
 	add_theme_support( 'custom-line-height' );

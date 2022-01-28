@@ -26,6 +26,10 @@ class CinemaPlusCustomizer{
         $this -> global_values_customizer($wp_customize);
 
         $this -> header_values_customizer($wp_customize);
+
+        $this -> blog_customizer($wp_customize);
+
+        $this -> footer_customizer($wp_customize);
         
         // $this -> landing_page_customizer($wp_customize);
     }
@@ -228,15 +232,15 @@ class CinemaPlusCustomizer{
     Header Foreground Color
     ========================================
 */ 
-        // $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
-        // $wp_customize -> add_control(
-        //     new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
-        //         'label' => __("Header Foreground","Cinema Plus"),
-        //         'section' => 'header_values_section',
-        //         'settings' => 'header_values_foreground_color_setting',
-        //         'priority' => 2,
-        //     ))
-        // );
+        $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
+        $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
+                'label' => __("Header Foreground","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_foreground_color_setting',
+                'priority' => 2,
+            ))
+        );
 
 /*
     ========================================
@@ -322,11 +326,112 @@ class CinemaPlusCustomizer{
 
 /*
     ========================================
-    Landing Page Customizer Function : All Settings and Controls for Landing Page
+    Footer Customizer Function : All Settings and Controls for footer
     ========================================
 */ 
-    private function landing_page_customizer($wp_customize){
-        // Define All Controls and Settings pair for Landing Page values
+private function blog_customizer($wp_customize){
+     $this -> add_new_section($wp_customize,"blog_values_section","Blog","Blog Customization Page","1","");
+
+       $this -> add_new_setting($wp_customize,"blog_values_author_position_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_author_position_control',array(
+                'label' => __("Display Author above post","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_author_position_setting',
+                 'type' => 'select',
+                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
+            ))
+        );
+}
+
+
+/*
+    ========================================
+    Footer Customizer Function : All Settings and Controls for footer
+    ========================================
+*/ 
+    private function footer_customizer($wp_customize){
+        // Section
+        $this -> add_new_section($wp_customize,"footer_values_section","Footer","Customize Footer Values","1","");
+/*
+    ========================================
+    Footer Subscribe Bar
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"footer_show_subscribe_bar_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'footer_show_subscribe_bar_control',array(
+                'label' => __("Show Footer Subscribe Bar","Cinema Plus"),
+                'section' => 'footer_values_section',
+                'settings' => 'footer_show_subscribe_bar_setting',
+                 'type' => 'checkbox',
+                 'priority' => 1,
+            ))
+        );
+        
+
+/*
+    ========================================
+    Footer Copyright
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"footer_show_copyright_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'footer_show_copyright_control',array(
+                'label' => __("Show Footer Copyright","Cinema Plus"),
+                'section' => 'footer_values_section',
+                'settings' => 'footer_show_copyright_setting',
+                 'type' => 'checkbox',
+                 'priority' => 1,
+            ))
+        );
+
+/*
+    ========================================
+    Footer Copyright Symbol
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"footer_copyright_symbol_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'footer_copyright_symbol_control',array(
+                'label' => __("Show Footer Copyright Symbol","Cinema Plus"),
+                'section' => 'footer_values_section',
+                'settings' => 'footer_copyright_symbol_setting',
+                 'type' => 'checkbox',
+                 'priority' => 1,
+            ))
+        );
+
+/*
+    ========================================
+    Footer Copyright Date
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"footer_copyright_date_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'footer_copyright_date_control',array(
+                'label' => __("Show Footer Copyright Date","Cinema Plus"),
+                'section' => 'footer_values_section',
+                'settings' => 'footer_copyright_date_setting',
+                 'type' => 'checkbox',
+                 
+            ))
+        );
+
+/*
+    ========================================
+    Footer Copyright Text
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"footer_copyright_text_setting","Infotekkers","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'footer_copyright_text_control',array(
+                'label' => __("Footer Copyright Text","Cinema Plus"),
+                'section' => 'footer_values_section',
+                'settings' => 'footer_copyright_text_setting',
+            ))
+        );
+
     }
 }
 
