@@ -542,4 +542,20 @@ ol {
 
 #main-content-container {
   padding-top: 100px!important;
+
+.nav-links {
+  @apply flex items-center justify-between w-full px-[15%];
+}
+
+#post-navigation {
+  @apply mb-[2%];
+}
+
+.nav-links .post-title {
+  @apply text-sm text-red-500;
+}
+
+#content-aside {
+  @apply min-h-[50vh] h-fit;
+
 }

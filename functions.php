@@ -182,6 +182,24 @@ add_action( 'wp_head',"cp_customize_header_css");
      'before_title'  => '',
      'after_title'   => '',
      ) );
+     register_sidebar( array(
+        'name'          => esc_html__( 'Blog Sidebar', 'nd_dosth' ),
+        'id'            => 'blog-sidebar',
+        'description'   => esc_html__( 'Widgets added here would appear inside the blog sidebar', 'nd_dosth' ),
+        'before_widget' => '<div>',
+        'after_widget'  => '</div>',
+        'before_title'  => '',
+        'after_title'   => '',
+        ) );
+        register_sidebar( array(
+            'name'          => esc_html__( 'Social Footer', 'nd_dosth' ),
+            'id'            => 'social-footer',
+            'description'   => esc_html__( 'Widgets added here would appear inside the social footer', 'nd_dosth' ),
+            'before_widget' => '<div>',
+            'after_widget'  => '</div>',
+            'before_title'  => '',
+            'after_title'   => '',
+            ) );
  }
  add_action( 'widgets_init', 'nd_dosth_register_sidebars' );
 

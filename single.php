@@ -2,9 +2,9 @@
 <?php get_header(  );?>
 
 <!-- Display Content -->
-<main class="pt-4">
+<main>
     <?php
-    get_template_part( "/template-parts/posts/content", get_post_format( ) );
+        get_template_part( "/template-parts/posts/content", get_post_format( ) );
     ?>
 </main>
 

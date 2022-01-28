@@ -575,6 +575,12 @@ Ensure the default browser behavior of the `hidden` attribute.
 .h-96 {
   height: 24rem;
 }
+.h-64 {
+  height: 16rem;
+}
+.h-48 {
+  height: 12rem;
+}
 .w-6 {
   width: 1.5rem;
 }
@@ -607,11 +613,28 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-\[600px\] {
   width: 600px;
 }
+.w-max {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+.w-64 {
+  width: 16rem;
+}
+.w-\[80vw\] {
+  width: 80vw;
+}
 .max-w-screen-md {
   max-width: 768px;
 }
 .max-w-screen-lg {
   max-width: 1024px;
+}
+.max-w-5xl {
+  max-width: 64rem;
+}
+.max-w-xl {
+  max-width: 36rem;
 }
 .flex-grow {
   flex-grow: 1;
@@ -654,6 +677,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .flex-wrap {
   flex-wrap: wrap;
+}
+.place-items-center {
+  place-items: center;
 }
 .items-center {
   align-items: center;
@@ -713,8 +739,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .rounded-md {
   border-radius: 0.375rem;
 }
+.rounded-full {
+  border-radius: 9999px;
+}
 .border {
   border-width: 1px;
+}
+.border-2 {
+  border-width: 2px;
 }
 .border-t-2 {
   border-top-width: 2px;
@@ -724,6 +756,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .border-l-4 {
   border-left-width: 4px;
+}
+.border-solid {
+  border-style: solid;
 }
 .border-red-500 {
   --tw-border-opacity: 1;
@@ -739,6 +774,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-green-500 {
   --tw-border-opacity: 1;
   border-color: rgb(34 197 94 / var(--tw-border-opacity));
+}
+.border-slate-900 {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 23 42 / var(--tw-border-opacity));
 }
 .bg-primary {
   --tw-bg-opacity: 1;
@@ -807,6 +846,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-yellow-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(253 224 71 / var(--tw-bg-opacity));
+}
+.bg-yellow-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 204 21 / var(--tw-bg-opacity));
 }
 .bg-cover {
   background-size: cover;
@@ -888,6 +931,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 .pt-4 {
   padding-top: 1rem;
@@ -1071,6 +1118,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.outline-none {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
 .transition {
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1247,6 +1298,8 @@ body {
 }
 
 #landing-page-container {
+  animation: animateLandingBackground 32s ease-in-out infinite;
+  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
   display: flex;
   height: 100vh;
   width: 100vw;
@@ -1267,12 +1320,6 @@ body {
   }
 }
 
-#landing-page-container {
-  height: 130vh;
-  animation: animateLandingBackground 32s ease-in-out infinite;
-  -webkit-animation: animateLandingBackground 32s ease-in-out infinite;
-}
-
 #landing-page-container > h1 {
   font-family: Spicy Rice;
   font-size: 32px;
@@ -1289,6 +1336,9 @@ body {
 }
 
 #landing-page-container > h2 {
+
+  /* Replace */
+  letter-spacing: 1px;
   margin-top: -1.5rem;
   font-family: Spicy Rice;
   font-size: 70px;
@@ -1306,12 +1356,6 @@ body {
   #landing-page-container > h2 {
     font-size: 120px;
   }
-}
-
-#landing-page-container > h2 {
-
-  /* Replace */
-  letter-spacing: 1px;
 }
 
 #landing-page-container > span {
@@ -1423,6 +1467,12 @@ body {
   ========================================
 */
 #promo-container {
+  background-image: url("../img/promo/notes.png");
+  transform: translateY(-35%);
+  -webkit-transform: translateY(-35%);
+  -moz-transform: translateY(-35%);
+  -ms-transform: translateY(-35%);
+  -o-transform: translateY(-35%);
   margin-right: auto;
   margin-left: auto;
   width: 100vw;
@@ -1438,14 +1488,6 @@ body {
   #promo-container {
     width: 75%;
   }
-}
-#promo-container {
-  background-image: url("../img/promo/notes.png");
-  transform: translateY(-35%);
-  -webkit-transform: translateY(-35%);
-  -moz-transform: translateY(-35%);
-  -ms-transform: translateY(-35%);
-  -o-transform: translateY(-35%);
 }
 #promo-container > h1 {
   font-size: 22px;
@@ -1498,12 +1540,12 @@ body {
   }
 }
 #promo-container > div {
+  /* height: 15vh; */
   margin-top: 3rem;
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
   padding-bottom: 4rem;
-  /* height: 15vh; */
 }
 #promo-container > div > a:nth-of-type(1) {
   margin-right: 1.5rem;
@@ -1573,14 +1615,15 @@ body {
 */
 
 #movie-cards-container {
+  /* p-3 lg:px-12 sm:justify-between */
   display: flex;
   width: 100vw;
   flex-wrap: wrap;
   padding: 1.5rem;
-  /* p-3 lg:px-12 sm:justify-between */
 }
 
 #movie-cards-container > main {
+  overflow: hidden;
   margin: 0px;
   margin-top: 2.5rem;
   margin-right: 0.75rem;
@@ -1604,10 +1647,6 @@ body {
     width: 16.666667%;
   }
 }
-
-#movie-cards-container > main {
-  overflow: hidden;
-}
 #movie-cards-container > main > div {
   position: relative;
   margin-top: 0px;
@@ -1621,6 +1660,16 @@ body {
 }
 
 #movie-card-overlay {
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
   position: absolute;
   display: flex;
   height: 100%;
@@ -1632,26 +1681,16 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
   opacity: 0;
-  transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-  -ms-transform: rotate(-90deg);
-  -o-transform: rotate(-90deg);
-  transition: all 1s;
-  -webkit-transition: all 1s;
-  -moz-transition: all 1s;
-  -ms-transition: all 1s;
-  -o-transition: all 1s;
 }
 /* Animation Style */
 #movie-card-image:hover #movie-card-overlay {
-  opacity: 1;
   transform: rotate(0deg);
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
   -o-transform: rotate(0deg);
   /* opacity: 1; */
+  opacity: 1;
 }
 
 #movie-cards-container > main:nth-of-type(1) > div {
