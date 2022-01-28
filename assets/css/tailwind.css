@@ -232,8 +232,6 @@ body {
   @apply w-6 h-6 bg-black inline-block mr-1 last:mr-0;
 }
 
-
-
 /* 
 
   ========================
@@ -257,8 +255,6 @@ body {
 /* #subscribe-bar-btn {
   @apply bg-secondary text-white uppercase text-xl font-bold w-fit self-center px-16 py-4 rounded-[10px] z-1;
 } */
-
-
 
 /* 
     ==============================
@@ -541,7 +537,8 @@ ol {
 }
 
 #main-content-container {
-  padding-top: 100px!important;
+  padding-top: 100px !important;
+}
 
 .nav-links {
   @apply flex items-center justify-between w-full px-[15%];
@@ -557,5 +554,4 @@ ol {
 
 #content-aside {
   @apply min-h-[50vh] h-fit;
-
 }
