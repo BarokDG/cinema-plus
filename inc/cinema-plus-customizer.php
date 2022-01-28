@@ -440,17 +440,7 @@ private function blog_customizer($wp_customize){
             ))
         );
 
-         // Author Conditionals
-        $this -> add_new_setting($wp_customize,"blog_values_show_author_setting","Yes","");
-        $wp_customize -> add_control(
-             new WP_Customize_Control($wp_customize,'blog_values_show_author_control',array(
-                'label' => __("Show Blog Author","Cinema Plus"),
-                'section' => 'blog_values_section',
-                'settings' => 'blog_values_show_author_setting',
-                 'type' => 'checkbox',
-                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
-            ))
-        );
+       
 
          // Author Display Area Conditionals
         $this -> add_new_setting($wp_customize,"blog_values_show_author_display_setting","Top","");
