@@ -1184,3 +1184,8 @@ ol {
 #content-aside {
   @apply min-h-[50vh] h-fit;
 }
+
+/* Comment Styles */
+#comment {
+  background: red;
+}
