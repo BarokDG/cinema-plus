@@ -71,7 +71,7 @@ class CinemaPlusCustomizer{
         $wp_customize->add_panel( 'global-values-panel', array(
          'title' => __( 'Global Values','Cinema Plus' ),
         'description' => "Global Values","Change the values for the whole website", // Include html tags such as <p>.
-        'priority' => 1, // Mixed with top-level-section hierarchy.
+        'priority' => 21, // Mixed with top-level-section hierarchy.
         ));
 
         /*
@@ -156,7 +156,18 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-one-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+               'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
 
@@ -166,7 +177,18 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-two-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+               'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
 
@@ -176,7 +198,18 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-three-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+                'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
 
@@ -186,7 +219,18 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-text-font-family-setting',
                  'type' => 'select',
-                'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+                'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
          $wp_customize -> add_control(
@@ -195,7 +239,18 @@ class CinemaPlusCustomizer{
                 'section' => 'global-values-font-section',
                 'settings' => 'global-heading-link-font-family-setting',
                  'type' => 'select',
-               'choices' => array("Open Sans"=>"Open Sans","Dancing Script" => "Dancing Script","Spicy Rice" => "Spicy Rice","inherit"=>"inherit"),
+               'choices' => array(
+                    "Architects Daughter"=>'Architects Daughter',
+                    'Caveat'=>'Caveat',
+                    "Dancing Script"=> 'Dancing Script',
+                    "Indie Flower" => 'Indie Flower',
+                    "Lato" => "Lato",
+                    "Montserrat" => "Montserrat",
+                    "Open Sans" => "Open Sans",
+                    "Poppins" => "Poppins",
+                    "Roboto" => "Roboto",
+                    "Spicy Rice" => "Spicy Rice"
+                ),
             ))
         );
     }
@@ -208,7 +263,7 @@ class CinemaPlusCustomizer{
 */ 
     private function header_values_customizer($wp_customize){
         // Section
-        $this -> add_new_section($wp_customize,"header_values_section","Header","Customize Header Values","1","");
+        $this -> add_new_section($wp_customize,"header_values_section","Header","Customize Header Values",22,"");
 
 /*
     ========================================
@@ -240,21 +295,6 @@ class CinemaPlusCustomizer{
 
 /*
     ========================================
-    Header Foreground Color
-    ========================================
-*/ 
-        $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
-        $wp_customize -> add_control(
-            new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
-                'label' => __("Header Foreground","Cinema Plus"),
-                'section' => 'header_values_section',
-                'settings' => 'header_values_foreground_color_setting',
-                'priority' => 2,
-            ))
-        );
-
-/*
-    ========================================
     Header Background Transparency
     ========================================
 */ 
@@ -265,10 +305,44 @@ class CinemaPlusCustomizer{
                 'section' => 'header_values_section',
                 'settings' => 'header_values_background_transparency_setting',
                  'type' => 'select',
-                 'priority' => 3,
+                 'priority' => 2,
                 'choices' => array("Yes"=>"Yes","No" => "No"),
             ))
         );
+
+/*
+    ========================================
+    Header Sticky
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_sticky_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'header_values_sticky_control',array(
+                'label' => __("Make Header Sticky","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_sticky_setting',
+                 'type' => 'select',
+                'choices' => array("Yes"=>"Yes","No" => "No"),
+                'priority' => 3,
+            ))
+        );
+
+/*
+    ========================================
+    Header Foreground Color
+    ========================================
+*/ 
+        $this -> add_new_setting($wp_customize,"header_values_foreground_color_setting","#fffff","");
+        $wp_customize -> add_control(
+            new WP_Customize_Color_Control($wp_customize,'header_value_foreground_color_control',array(
+                'label' => __("Header Foreground","Cinema Plus"),
+                'section' => 'header_values_section',
+                'settings' => 'header_values_foreground_color_setting',
+                'priority' => 4,
+            ))
+        );
+
+
 
 /*
     ========================================
@@ -281,7 +355,7 @@ class CinemaPlusCustomizer{
                 'label' => __("Header Background Color","Cinema Plus"),
                 'section' => 'header_values_section',
                 'settings' => 'header_values_background_color_setting',
-                'priority' => 4,
+                'priority' => 5,
             ))
         );
 
@@ -296,26 +370,11 @@ class CinemaPlusCustomizer{
                 'label' => __("Navigation Hover Color","Cinema Plus"),
                 'section' => 'header_values_section',
                 'settings' => 'header_values_hover_color_setting',
-                'priority' => 5,
-            ))
-        );
-       
-/*
-    ========================================
-    Header Sticky
-    ========================================
-*/ 
-        $this -> add_new_setting($wp_customize,"header_values_sticky_setting","Yes","");
-        $wp_customize -> add_control(
-             new WP_Customize_Control($wp_customize,'header_values_sticky_control',array(
-                'label' => __("Make Header Sticky","Cinema Plus"),
-                'section' => 'header_values_section',
-                'settings' => 'header_values_sticky_setting',
-                 'type' => 'select',
-                'choices' => array("Yes"=>"Yes","No" => "No"),
                 'priority' => 6,
             ))
         );
+       
+
 
 /*
     ========================================
@@ -341,7 +400,7 @@ class CinemaPlusCustomizer{
     ========================================
 */ 
 private function blog_customizer($wp_customize){
-     $this -> add_new_section($wp_customize,"blog_values_section","Blog","Blog Customization Page","1","");
+     $this -> add_new_section($wp_customize,"blog_values_section","Blog","Blog Customization Page",23,"");
 
        $this -> add_new_setting($wp_customize,"blog_values_author_position_setting","Yes","");
         $wp_customize -> add_control(
@@ -349,7 +408,70 @@ private function blog_customizer($wp_customize){
                 'label' => __("Display Author above post","Cinema Plus"),
                 'section' => 'blog_values_section',
                 'settings' => 'blog_values_author_position_setting',
+                 'type' => 'checkbox',
+                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
+            ))
+        );
+
+
+
+        // Tag Conditionals
+        $this -> add_new_setting($wp_customize,"blog_values_show_tag_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_show_tag_control',array(
+                'label' => __("Show Blog Tag","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_show_tag_setting',
+                 'type' => 'checkbox',
+                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
+            ))
+        );
+
+
+        // Category Conditionals
+        $this -> add_new_setting($wp_customize,"blog_values_show_category_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_show_category_control',array(
+                'label' => __("Show Blog Category","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_show_category_setting',
+                 'type' => 'checkbox',
+                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
+            ))
+        );
+
+         // Author Conditionals
+        $this -> add_new_setting($wp_customize,"blog_values_show_author_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_show_author_control',array(
+                'label' => __("Show Blog Author","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_show_author_setting',
+                 'type' => 'checkbox',
+                 'choices' => array('Yes'=>'Yes',"No"=>'No'),
+            ))
+        );
+
+         // Author Display Area Conditionals
+        $this -> add_new_setting($wp_customize,"blog_values_show_author_display_setting","Top","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_show_author_display_control',array(
+                'label' => __("Show Blog Author","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_show_author_display_setting',
                  'type' => 'select',
+                 'choices' => array('Top'=>'Top',"Bottom"=>'Bottom'),
+            ))
+        );
+
+         // Comment Count Conditionals
+        $this -> add_new_setting($wp_customize,"blog_values_show_comment_count_setting","Yes","");
+        $wp_customize -> add_control(
+             new WP_Customize_Control($wp_customize,'blog_values_show_comment_count_control',array(
+                'label' => __("Show Comment Count","Cinema Plus"),
+                'section' => 'blog_values_section',
+                'settings' => 'blog_values_show_comment_count_setting',
+                 'type' => 'checkbox',
                  'choices' => array('Yes'=>'Yes',"No"=>'No'),
             ))
         );
@@ -363,7 +485,7 @@ private function blog_customizer($wp_customize){
 */ 
     private function footer_customizer($wp_customize){
         // Section
-        $this -> add_new_section($wp_customize,"footer_values_section","Footer","Customize Footer Values","1","");
+        $this -> add_new_section($wp_customize,"footer_values_section","Footer","Customize Footer Values",25,"");
 /*
     ========================================
     Footer Subscribe Bar
