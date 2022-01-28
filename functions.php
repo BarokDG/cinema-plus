@@ -65,13 +65,13 @@ body {
 }
 
 h1 {
-    color: <?php echo get_theme_mod("global-heading-one-color-setting", 'yellow') ?>;
+    color: <?php echo get_theme_mod("global-heading-one-color-setting", '#000000') ?>;
     font-family: <?php echo get_theme_mod("global-heading-one-font-family-setting", 'Dancing Script')?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "54px") ?>;
 }
 
 h2 {
-    color: <?php echo get_theme_mod("global-heading-two-color-setting", "yellow") ?>;
+    color: <?php echo get_theme_mod("global-heading-two-color-setting", "#000000") ?>;
     font-family: <?php echo get_theme_mod("global-heading-two-font-family-setting", "Dancing Script")?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "42px") ?>;
 }
@@ -80,7 +80,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: <?php echo get_theme_mod("global-heading-three-color-setting", "yellow") ?>;
+    color: <?php echo get_theme_mod("global-heading-three-color-setting", "#000000") ?>;
     font-family: <?php echo get_theme_mod("global-heading-three-font-family-setting", "Dancing Script")?>;
     font-size: <?php echo get_theme_mod("landing-page-title-font-size-setting", "32px") ?>;
 }

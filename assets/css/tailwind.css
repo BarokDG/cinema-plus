@@ -1184,3 +1184,19 @@ ol {
 #content-aside {
   @apply min-h-[50vh] h-fit;
 }
+
+/* Comment Styles */
+#comment {
+  border: none;
+  background-color: rgba(128, 128, 128, 0.185);
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+#submit {
+  border: 0.25px solid #efcf4f;
+  @apply bg-primary;
+}
