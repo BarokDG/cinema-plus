@@ -29,10 +29,7 @@ function cp_custom_settings() {
 	add_settings_section( 'cp-contact-options', 'Contact Form Option', '', 'cinema_plus');
 	add_settings_field( 'contact-name', 'Activate Contact Form', 'cp_activate_contact', 'cinema_plus', 'cp-contact-options');
 
-	// Response Types
-	register_setting( 'cp-response-group', 'response_type' );
-	add_settings_section( 'cp-response-option', 'Response Type Option', '', 'cinema_plus');
-	add_settings_field( 'response', 'Select Response Type', 'cp_select_response', 'cinema_plus', 'cp-response-option');
+	
 
 
 }
